@@ -1,0 +1,38 @@
+{
+	"rooms": [
+		{
+			"parent": null,
+			"neighbours": [],
+			"name": "room1",
+			"assets": [
+				"gameData",
+				"Scene"
+			]
+		}
+	],
+	"libraries": [
+		"lue",
+		"zui",
+		"haxebullet",
+		"dependencies"
+	],
+	"game": {
+		"width": 1136,
+		"height": 640,
+		"name": "Empty",
+		"antiAliasingSamples": 2
+	},
+	"assets": [
+		{
+			"type": "blob",
+			"file": "gameData.json",
+			"name": "gameData"
+		},
+		{
+			"type": "blob",
+			"file": "Scene.json",
+			"name": "Scene"
+		}
+	],
+	"format": 3
+}

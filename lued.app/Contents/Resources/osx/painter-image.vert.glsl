@@ -1,0 +1,19 @@
+#version 330
+uniform mat4 projectionMatrix;
+in vec3 vertexPosition;
+out vec2 texCoord;
+in vec2 texPosition;
+out vec4 color;
+in vec4 vertexColor;
+
+
+void main()
+{
+	gl_Position = (projectionMatrix * vec4(vertexPosition[0], vertexPosition[1], vertexPosition[2], 1.0));
+	texCoord = texPosition;
+	color = vertexColor;
+	// Branch to 6
+	// Label 6
+	return;
+}
+

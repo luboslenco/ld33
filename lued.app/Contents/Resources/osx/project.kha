@@ -1,0 +1,331 @@
+{
+	"assets": [
+		{
+			"name": "gameData",
+			"type": "blob",
+			"files": [
+				"gameData.json"
+			]
+		},
+		{
+			"name": "Scene",
+			"type": "blob",
+			"files": [
+				"Scene.json"
+			]
+		},
+		{
+			"name": "editor_grid",
+			"type": "blob",
+			"files": [
+				"editor_grid.json"
+			]
+		},
+		{
+			"name": "editor_translate_gizmo",
+			"type": "blob",
+			"files": [
+				"editor_translate_gizmo.json"
+			]
+		},
+		{
+			"name": "editor_scale_gizmo",
+			"type": "blob",
+			"files": [
+				"editor_scale_gizmo.json"
+			]
+		},
+		{
+			"name": "editor_rotate_gizmo",
+			"type": "blob",
+			"files": [
+				"editor_rotate_gizmo.json"
+			]
+		},
+		{
+			"name": "editor_compass",
+			"type": "blob",
+			"files": [
+				"editor_compass.json"
+			]
+		},
+		{
+			"name": "editor_camera",
+			"type": "blob",
+			"files": [
+				"editor_camera.json"
+			]
+		},
+		{
+			"name": "editor_light",
+			"type": "blob",
+			"files": [
+				"editor_light.json"
+			]
+		},
+		{
+			"name": "cube_geometry",
+			"type": "blob",
+			"files": [
+				"cube_geometry.json"
+			]
+		},
+		{
+			"name": "sphere_geometry",
+			"type": "blob",
+			"files": [
+				"sphere_geometry.json"
+			]
+		},
+		{
+			"name": "plane_geometry",
+			"type": "blob",
+			"files": [
+				"plane_geometry.json"
+			]
+		},
+		{
+			"name": "cylinder_geometry",
+			"type": "blob",
+			"files": [
+				"cylinder_geometry.json"
+			]
+		},
+		{
+			"name": "cone_geometry",
+			"type": "blob",
+			"files": [
+				"cone_geometry.json"
+			]
+		},
+		{
+			"name": "torus_geometry",
+			"type": "blob",
+			"files": [
+				"torus_geometry.json"
+			]
+		},
+		{
+			"name": "monkey_geometry",
+			"type": "blob",
+			"files": [
+				"monkey_geometry.json"
+			]
+		},
+		{
+			"name": "helvetica_neue18.kravur",
+			"size": 18,
+			"type": "blob",
+			"files": [
+				"helvetica_neue18.kravur"
+			]
+		},
+		{
+			"name": "helvetica_neue16.kravur",
+			"size": 16,
+			"type": "blob",
+			"files": [
+				"helvetica_neue16.kravur"
+			]
+		}
+	],
+	"format": 3,
+	"game": {
+		"antiAliasingSamples": 16,
+		"height": 640,
+		"name": "lued",
+		"width": 1136
+	},
+	"libraries": [
+		"lue",
+		"haxebullet",
+		"dependencies",
+		"sync_kha",
+		"zui"
+	],
+	"rooms": [
+		{
+			"assets": [
+				"gameData",
+				"Scene",
+				"editor_grid",
+				"editor_translate_gizmo",
+				"editor_rotate_gizmo",
+				"editor_scale_gizmo",
+				"editor_compass",
+				"editor_camera",
+				"editor_light",
+				"cube_geometry",
+				"sphere_geometry",
+				"plane_geometry",
+				"cylinder_geometry",
+				"cone_geometry",
+				"torus_geometry",
+				"monkey_geometry",
+				"helvetica_neue18.kravur",
+				"helvetica_neue16.kravur"
+			],
+			"name": "room1",
+			"neighbours": [],
+			"parent": null
+		}
+	],
+	"shaders": [
+		{
+			"files": [
+				"compass.frag.glsl"
+			],
+			"name": "compass.frag"
+		},
+		{
+			"files": [
+				"compass.vert.glsl"
+			],
+			"name": "compass.vert"
+		},
+		{
+			"files": [
+				"debug.frag.glsl"
+			],
+			"name": "debug.frag"
+		},
+		{
+			"files": [
+				"debug.vert.glsl"
+			],
+			"name": "debug.vert"
+		},
+		{
+			"files": [
+				"transform_gizmo.frag.glsl"
+			],
+			"name": "transform_gizmo.frag"
+		},
+		{
+			"files": [
+				"transform_gizmo.vert.glsl"
+			],
+			"name": "transform_gizmo.vert"
+		},
+		{
+			"files": [
+				"painter-colored.frag.glsl"
+			],
+			"name": "painter-colored.frag"
+		},
+		{
+			"files": [
+				"painter-colored.vert.glsl"
+			],
+			"name": "painter-colored.vert"
+		},
+		{
+			"files": [
+				"painter-image.frag.glsl"
+			],
+			"name": "painter-image.frag"
+		},
+		{
+			"files": [
+				"painter-image.vert.glsl"
+			],
+			"name": "painter-image.vert"
+		},
+		{
+			"files": [
+				"painter-text.frag.glsl"
+			],
+			"name": "painter-text.frag"
+		},
+		{
+			"files": [
+				"painter-text.vert.glsl"
+			],
+			"name": "painter-text.vert"
+		},
+		{
+			"files": [
+				"painter-video.frag.glsl"
+			],
+			"name": "painter-video.frag"
+		},
+		{
+			"files": [
+				"painter-video.vert.glsl"
+			],
+			"name": "painter-video.vert"
+		},
+		{
+			"files": [
+				"billboard.frag.glsl"
+			],
+			"name": "billboard.frag"
+		},
+		{
+			"files": [
+				"billboard.vert.glsl"
+			],
+			"name": "billboard.vert"
+		},
+		{
+			"files": [
+				"default.frag.glsl"
+			],
+			"name": "default.frag"
+		},
+		{
+			"files": [
+				"default.vert.glsl"
+			],
+			"name": "default.vert"
+		},
+		{
+			"files": [
+				"mesh.frag.glsl"
+			],
+			"name": "mesh.frag"
+		},
+		{
+			"files": [
+				"mesh.vert.glsl"
+			],
+			"name": "mesh.vert"
+		},
+		{
+			"files": [
+				"particles.frag.glsl"
+			],
+			"name": "particles.frag"
+		},
+		{
+			"files": [
+				"particles.vert.glsl"
+			],
+			"name": "particles.vert"
+		},
+		{
+			"files": [
+				"shadowmap.frag.glsl"
+			],
+			"name": "shadowmap.frag"
+		},
+		{
+			"files": [
+				"shadowmap.vert.glsl"
+			],
+			"name": "shadowmap.vert"
+		},
+		{
+			"files": [
+				"skinnedmesh.frag.glsl"
+			],
+			"name": "skinnedmesh.frag"
+		},
+		{
+			"files": [
+				"skinnedmesh.vert.glsl"
+			],
+			"name": "skinnedmesh.vert"
+		}
+	]
+}

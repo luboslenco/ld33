@@ -1,0 +1,29 @@
+{
+    "clear": [
+        0.295695960521698,
+        0.295695960521698,
+        0.295695960521698,
+        1.0
+    ],
+    "fog": 0,
+    "fogColor": [
+        0.5,
+        0.5,
+        0.7,
+        1.0
+    ],
+    "fogDensity": 0.04,
+    "gravity": [
+        0.0,
+        0.0,
+        -9.8100004196167
+    ],
+    "orient": 0,
+    "packageName": "laried",
+    "physics": 1,
+    "scene": "Scene",
+    "scenes": ["Scene"],
+    "shadowMapSize": 1024,
+    "shadowMapping": 0,
+    "ssao": 0
+}

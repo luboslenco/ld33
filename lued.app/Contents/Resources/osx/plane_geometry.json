@@ -1,0 +1,113 @@
+{
+    "camera_objects": [],
+    "geometry_objects": [
+        {
+            "id": "geometry_internal_plane",
+            "mesh": {
+                "index_arrays": [
+                    {
+                        "material": 0,
+                        "size": 3,
+                        "values": [
+                            0,
+                            1,
+                            2,
+                            0,
+                            2,
+                            3
+                        ]
+                    }
+                ],
+                "primitive": "triangles",
+                "vertex_arrays": [
+                    {
+                        "attrib": "position",
+                        "size": 3,
+                        "values": [
+                            -1.0,
+                            -1.0,
+                            0.0,
+                            1.0,
+                            -1.0,
+                            0.0,
+                            1.0,
+                            1.0,
+                            0.0,
+                            -1.0,
+                            1.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "attrib": "normal",
+                        "size": 3,
+                        "values": [
+                            0.0,
+                            0.0,
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "light_objects": [],
+    "materials": [
+        {
+            "colors": [
+                {
+                    "attrib": "diffuse",
+                    "size": 3,
+                    "values": [
+                        0.6400000190734865,
+                        0.6400000190734865,
+                        0.6400000190734865
+                    ]
+                }
+            ],
+            "id": "material1",
+            "name": "Material"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "node1",
+            "material_refs": [
+                "material1"
+            ],
+            "name": "Plane",
+            "nodes": [],
+            "object_ref": "geometry_internal_plane",
+            "transform": {
+                "values": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            },
+            "type": "geometry_node"
+        }
+    ]
+}
