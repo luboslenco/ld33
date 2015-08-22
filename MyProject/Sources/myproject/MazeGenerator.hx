@@ -7,13 +7,14 @@ import myproject.FloorsData;
 
 class MazeGenerator extends Trait {
 
-	static var currentFloor = 5;
+	static var currentFloor = 0;
 
 	public static inline var tileSize = 2;
 
 	public static inline var TILE_EMPTY = 0;
 	public static inline var TILE_WALL = 1;
 	public static inline var TILE_STAIRS = 2;
+	public static inline var TILE_STAIRS_DOWN = 3;
 
 	public static inline var THING_LEVER = 0;
 	public static inline var THING_GATE = 1;
@@ -50,8 +51,10 @@ class MazeGenerator extends Trait {
     	var scene = Root.gameScene;
 		var nodes:Array<TNode> = [];
 		nodes.push(scene.getNode("Floor"));
+		var ceilNodes = [scene.getNode("Ceil")];
 		nodes.push(scene.getNode("Cube"));
 		nodes.push(scene.getNode("Stairs"));
+		nodes.push(scene.getNode("StairsDown"));
 
 		var thingNodes:Array<TNode> = [];
 		thingNodes.push(scene.getNode("Lever"));
@@ -65,16 +68,11 @@ class MazeGenerator extends Trait {
 		for (i in 0...mazeHeight) {
 			for (j in 0...mazeWidth) {
 				var m = maze[i][j];
-				var o = scene.createNode(nodes[m]);
-				o.transform.x = getWorldX(j);
-				o.transform.y = getWorldY(i);
-
-				var md = mazeDirs[i][j];
-				if (md != 0) {
-					o.transform.rotateZ(lue.math.Math.degToRad(md * 90));
+				placeNode(nodes, m, i, j);
+				// Ceiling
+				if (m == TILE_EMPTY || m == TILE_STAIRS_DOWN) {
+					placeNode(ceilNodes, 0, i, j);
 				}
-
-				owner.addChild(o);
 			}
 		}
 
@@ -94,6 +92,21 @@ class MazeGenerator extends Trait {
 		}
     }
 
+    function placeNode(nodes:Array<TNode>, nodePos:Int, i:Int, j:Int) {
+    	var scene = Root.gameScene;
+
+    	var o = scene.createNode(nodes[nodePos]);
+		o.transform.x = getWorldX(j);
+		o.transform.y = getWorldY(i);
+
+		var md = mazeDirs[i][j];
+		if (md != 0) {
+			o.transform.rotateZ(lue.math.Math.degToRad(md * 90));
+		}
+
+		owner.addChild(o);
+    }
+
     public function isWall(x:Int, y:Int) {
     	if (x < 0 || x > mazeWidth - 1 || y < 0 || y > mazeHeight - 1) return true;
     	return maze[y][x] == TILE_WALL ? true : false;
@@ -102,6 +115,11 @@ class MazeGenerator extends Trait {
     public function isStairs(x:Int, y:Int) {
     	if (x < 0 || x > mazeWidth - 1 || y < 0 || y > mazeHeight - 1) return false;
     	return maze[y][x] == TILE_STAIRS ? true : false;
+    }
+
+    public function isStairsDown(x:Int, y:Int) {
+    	if (x < 0 || x > mazeWidth - 1 || y < 0 || y > mazeHeight - 1) return false;
+    	return maze[y][x] == TILE_STAIRS_DOWN ? true : false;
     }
 
     public function getWorldX(x:Int) {
@@ -114,6 +132,10 @@ class MazeGenerator extends Trait {
 
     public static function nextFloor() {
     	currentFloor++;
+    }
+
+    public static function previousFloor() {
+    	currentFloor--;
     }
 
     public function getThingById(id:Int):Thing {

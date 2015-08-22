@@ -169,7 +169,8 @@ class StepCamera extends Trait implements IUpdateable {
 		}
 
 		// Move
-		if (!maze.isWall(targetX, targetY)) {
+		if (!maze.isWall(targetX, targetY) && !maze.isStairsDown(targetX, targetY)) {
+
 			moveComplete = false;
 			if (type == "move") {
 				posCurrent = 0;
@@ -181,6 +182,7 @@ class StepCamera extends Trait implements IUpdateable {
 			}
 
 			var isStairs = maze.isStairs(targetX, targetY);
+			//var isStairsDown = maze.isStairsDown(targetX, targetY);
 			var moveTime = isStairs ? 1.0 : 0.2;
 
 			posX = targetX;
@@ -204,6 +206,12 @@ class StepCamera extends Trait implements IUpdateable {
 				// Reset and load next floor
 				maze.reset();
 			}
+			/*else if (isStairsDown) {
+				MazeGenerator.previousFloor();
+				// Camera down
+				motion.Actuate.tween(this, moveTime, {liftCurrent:-MazeGenerator.tileSize * dist}).onComplete(function() {});
+				maze.reset();
+			}*/
 		}
 	}
 

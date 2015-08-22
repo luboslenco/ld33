@@ -61,7 +61,7 @@ class FloorsData {
 
 		else if (i == 1) {
 			f.data = [
-				[1, 1, 1, 1, 1],
+				[1, 1, 3, 1, 1],
 				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
@@ -71,7 +71,7 @@ class FloorsData {
 				[1, 1, 1, 1, 1]
 			];
 			f.dirs = [
-				[0, 0, 0, 0, 0],
+				[0, 0, 3, 0, 0],
 				[0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0],
@@ -83,13 +83,8 @@ class FloorsData {
 			f.startX = 2;
 			f.startY = 1;
 			f.startDir = 0;
-			var t1 = new Thing(MazeGenerator.THING_LEVER, 3, 3);
-			t1.targetId = 0;
-			f.things.push(t1);
-			var t2 = new Thing(MazeGenerator.THING_GATE, 2, 4);
-			t2.id = 0;
-			t2.dir = 3;
-			f.things.push(t2);
+			f.things.push(makeGate(2, 4, 3, 0));
+			f.things.push(makeLever(3, 3, 0));
 		}
 
 
@@ -97,7 +92,7 @@ class FloorsData {
 		if (i == 2) {
 			f.data = [
 				[1, 1, 1, 1, 1],
-				[1, 0, 0, 0, 1],
+				[3, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
@@ -107,7 +102,7 @@ class FloorsData {
 			];
 			f.dirs = [
 				[0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0],
+				[2, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0],
@@ -115,7 +110,7 @@ class FloorsData {
 				[0, 0, 0, 0, 0],
 				[0, 0, 3, 0, 0]
 			];
-			f.startX = 2;
+			f.startX = 1;
 			f.startY = 1;
 			f.startDir = 0;
 			f.things.push(makeHammer(1, 3, 1));
@@ -127,7 +122,7 @@ class FloorsData {
 
 		if (i == 3) {
 			f.data = [
-				[1, 1, 1, 1, 1],
+				[1, 1, 3, 1, 1],
 				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
@@ -137,7 +132,7 @@ class FloorsData {
 				[1, 1, 2, 1, 1]
 			];
 			f.dirs = [
-				[0, 0, 0, 0, 0],
+				[0, 0, 3, 0, 0],
 				[0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0],
@@ -163,7 +158,7 @@ class FloorsData {
 
 		if (i == 4) {
 			f.data = [
-				[1, 1, 1, 1, 1],
+				[1, 1, 3, 1, 1],
 				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
@@ -174,7 +169,7 @@ class FloorsData {
 				[1, 1, 2, 1, 1]
 			];
 			f.dirs = [
-				[0, 0, 0, 0, 0],
+				[0, 0, 3, 0, 0],
 				[0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0],
@@ -196,7 +191,7 @@ class FloorsData {
 
 		if (i == 5) {
 			f.data = [
-				[1, 1, 1, 1, 1],
+				[1, 1, 3, 1, 1],
 				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
@@ -206,7 +201,7 @@ class FloorsData {
 				[1, 1, 2, 1, 1]
 			];
 			f.dirs = [
-				[0, 0, 0, 0, 0],
+				[0, 0, 3, 0, 0],
 				[0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0],
@@ -218,13 +213,59 @@ class FloorsData {
 			f.startX = 2;
 			f.startY = 1;
 			f.startDir = 0;
-			f.things.push(new Thing(MazeGenerator.THING_GUN, 0, 3));
-			var t2 = new Thing(MazeGenerator.THING_GUN, 4, 5);
-			t2.i = 1;
-			f.things.push(t2);
+
+			f.things.push(makeGun(0, 3, 0));
+			f.things.push(makeGun(f.data[0].length - 1, 5, 1));
+		}
+
+
+
+		if (i == 6) {
+			f.data = [
+				[1, 3, 1, 2, 1],
+				[1, 0, 1, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 1, 1, 1, 1]
+			];
+			f.dirs = [
+				[0, 3, 0, 1, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0]
+			];
+			f.startX = 1;
+			f.startY = 1;
+			f.startDir = 0;
+			f.things.push(makeGate(3, 1, 1, 0));
+			f.things.push(makeLever(3, 7, 0));
+			f.things.push(makeSpike(2, 3, 0));
+			f.things.push(makeHammer(2, 5, 0));
 		}
 
 		return f;
+	}
+
+	static function makeGate(x:Int, y:Int, dir:Int, id:Int):Thing {
+		var t = new Thing(MazeGenerator.THING_GATE, x, y);
+		t.dir = dir;
+		t.id = id;
+		return t;
+	}
+
+	static function makeLever(x:Int, y:Int, targetId:Int):Thing {
+		var t = new Thing(MazeGenerator.THING_LEVER, x, y);
+		t.targetId = targetId;
+		return t;
 	}
 
 	static function makeHammer(x:Int, y:Int, state:Int):Thing {
@@ -235,6 +276,12 @@ class FloorsData {
 
 	static function makeSpike(x:Int, y:Int, i:Int):Thing {
 		var t = new Thing(MazeGenerator.THING_SPIKE, x, y);
+		t.i = i;
+		return t;
+	}
+
+	static function makeGun(x:Int, y:Int, i:Int):Thing {
+		var t = new Thing(MazeGenerator.THING_GUN, x, y);
 		t.i = i;
 		return t;
 	}
