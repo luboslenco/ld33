@@ -7,7 +7,7 @@ import myproject.FloorsData;
 
 class MazeGenerator extends Trait {
 
-	static var currentFloor = 3;
+	static var currentFloor = 5;
 
 	public static inline var tileSize = 2;
 
@@ -19,6 +19,8 @@ class MazeGenerator extends Trait {
 	public static inline var THING_GATE = 1;
 	public static inline var THING_HAMMER = 2;
 	public static inline var THING_SPIKE = 3;
+	public static inline var THING_MOVER = 4;
+	public static inline var THING_GUN = 5;
 
 	var cam:StepCamera;
 
@@ -56,6 +58,8 @@ class MazeGenerator extends Trait {
 		thingNodes.push(scene.getNode("Gate"));
 		thingNodes.push(scene.getNode("Hammer"));
 		thingNodes.push(scene.getNode("Spike"));
+		thingNodes.push(scene.getNode("Mover"));
+		thingNodes.push(scene.getNode("Gun"));
 
 		// Tiles
 		for (i in 0...mazeHeight) {
@@ -167,6 +171,35 @@ class MazeGenerator extends Trait {
     				});
     				// Check player
     				if (t.x == cam.posX && t.y == cam.posY) {
+    					reset();
+    				}
+    			}
+    		}
+    		// Movers
+    		else if (t.type == THING_MOVER) {
+    			// Set state when wall is hit
+    			if (t.state == 0 && isWall(t.x + 1, t.y)) { t.state = 1; }
+    			else if (t.state == 1 && isWall(t.x - 1, t.y)) { t.state = 0; }
+    			// Move
+    			if (t.state == 0) { t.x++; }
+    			else if (t.state == 1) { t.x--; }
+    			motion.Actuate.tween(t.object.transform, 0.2, {x: getWorldX(t.x)});
+    			// Check player
+    			if (t.x == cam.posX && t.y == cam.posY) {
+    				reset();
+    			}
+    		}
+    		// Guns
+    		else if (t.type == THING_GUN) {
+    			t.i++;
+    			if (t.i >= t.rate) {
+    				t.i = 0;
+    				// Move
+    				if (t.x == 0) t.x = mazeWidth - 1;
+    				else t.x = 0;
+    				motion.Actuate.tween(t.object.transform, 0.2, {x: getWorldX(t.x)});
+    				// Check player
+    				if (t.y == cam.posY) {
     					reset();
     				}
     			}

@@ -159,6 +159,71 @@ class FloorsData {
 			f.things.push(makeSpike(2, 5, 0));
 		}
 
+
+
+		if (i == 4) {
+			f.data = [
+				[1, 1, 1, 1, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 1, 2, 1, 1]
+			];
+			f.dirs = [
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 3, 0, 0]
+			];
+			f.startX = 2;
+			f.startY = 1;
+			f.startDir = 0;
+			f.things.push(new Thing(MazeGenerator.THING_MOVER, 1, 3));
+			f.things.push(new Thing(MazeGenerator.THING_MOVER, 3, 4));
+			f.things.push(new Thing(MazeGenerator.THING_MOVER, 2, 6));
+		}
+
+
+
+		if (i == 5) {
+			f.data = [
+				[1, 1, 1, 1, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 1, 2, 1, 1]
+			];
+			f.dirs = [
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 3, 0, 0]
+			];
+			f.startX = 2;
+			f.startY = 1;
+			f.startDir = 0;
+			f.things.push(new Thing(MazeGenerator.THING_GUN, 0, 3));
+			var t2 = new Thing(MazeGenerator.THING_GUN, 4, 5);
+			t2.i = 1;
+			f.things.push(t2);
+		}
+
 		return f;
 	}
 

@@ -161,6 +161,10 @@ class StepCamera extends Trait implements IUpdateable {
 					// Hammer down
 					if (t.state == 0) { return; }
 				}
+				// Mover
+				else if (t.type == MazeGenerator.THING_MOVER) {
+					return;
+				}
 			}
 		}
 
