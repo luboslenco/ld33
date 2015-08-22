@@ -2,111 +2,93 @@ package myproject;
 
 import lue.core.Trait;
 import lue.Root;
+import lue.sys.importer.SceneFormat;
+import myproject.FloorsData;
 
 class MazeGenerator extends Trait {
 
-	public static var tileSize = 2;
+	static var currentFloor = 1;
 
+	public static inline var tileSize = 2;
+
+	public static inline var TILE_EMPTY = 0;
+	public static inline var TILE_WALL = 1;
+	public static inline var TILE_STAIRS = 2;
+
+	public static inline var THING_LEVER = 0;
+	public static inline var THING_GATE = 1;
+
+	public var floor:Floor;
 	var maze:Array<Array<Int>>;
+	var mazeDirs:Array<Array<Int>>;
 	var mazeWidth:Int; 
 	var mazeHeight:Int;
-	var posX = 1;
-	var posY = 1;
-	var moves:Array<Int>;
+	var things:Array<Thing>;
 
-    public function new(mazeWidth = 25, mazeHeight = 25) {
+    public function new() {
         super();
 
-        this.mazeWidth = mazeWidth;
-        this.mazeHeight = mazeHeight;
-
-        maze = [];
-		for (i in 0...mazeHeight) {
-			maze.push([]);
-			for(j in 0...mazeWidth) {
-				maze[i].push(1);
-			}
-		}
-		
-		maze[posX][posY] = 0;
-		
-		moves = [];
-		moves.push(posY + posY * mazeWidth);
-
-		generateMaze();
+        floor = FloorsData.getFloor(currentFloor);
+        maze = floor.data;
+        mazeDirs = floor.dirs;
+        mazeWidth =  maze[0].length;
+        mazeHeight = maze.length;
+        things = floor.things;
 
         Root.registerInit(init);
     }
 
-    function generateMaze() {
-		if (moves.length > 0) {
-			var possibleDirections:Array<String> = [];
-			
-			if (posX + 2 > 0 && posX + 2 < mazeHeight -1 && maze[posX + 2][posY] == 1) {
-				possibleDirections.push("S");
-			}
-			if (posX - 2 > 0 && posX - 2 < mazeHeight -1 && maze[posX - 2][posY] == 1) {
-				possibleDirections.push("N");
-			}
-			if (posY - 2 > 0 && posY - 2 < mazeWidth - 1 && maze[posX][posY - 2] == 1) {
-				possibleDirections.push("W");
-			}
-			if (posY + 2 > 0 && posY + 2 < mazeWidth - 1 && maze[posX][posY + 2] == 1) {
-				possibleDirections.push("E");
-			}
-			
-			if (possibleDirections.length > 0) {
-				var move = Std.random(possibleDirections.length);
-				switch(possibleDirections[move]) {
-					case "N":
-						maze[posX - 2][posY] = 0;
-						maze[posX - 1][posY] = 0;
-						posX-=2;
-					case "S":
-						maze[posX + 2][posY] = 0;
-						maze[posX + 1][posY] = 0;
-						posX += 2;
-					case "W":
-						maze[posX][posY - 2] = 0;
-						maze[posX][posY - 1] = 0;
-						posY -= 2;
-					case "E":
-						maze[posX][posY + 2] = 0;
-						maze[posX][posY + 1] = 0;
-						posY += 2;
-				}
-				moves.push(posY + posX * mazeWidth);   
-			}
-			else {
-				var back = moves.pop();
-				posX = Std.int(back / mazeWidth);
-				posY = back % mazeWidth;
-			}
-
-			// Recursive
-			generateMaze();
-		}
-	}
-
     function init() {
     	var scene = Root.gameScene;
-		var node = scene.getNode("Cube");
+		var nodes:Array<TNode> = [];
+		nodes.push(scene.getNode("Floor"));
+		nodes.push(scene.getNode("Cube"));
+		nodes.push(scene.getNode("Stairs"));
 
+		var thingNodes:Array<TNode> = [];
+		thingNodes.push(scene.getNode("Lever"));
+		thingNodes.push(scene.getNode("Gate"));
+
+		// Tiles
 		for (i in 0...mazeHeight) {
 			for (j in 0...mazeWidth) {
-				if (maze[i][j] == 1) {
-					var o = scene.createNode(node);
-					o.transform.x = getWorldX(j);
-					o.transform.y = getWorldY(i);
-					owner.addChild(o);
+				var m = maze[i][j];
+				var o = scene.createNode(nodes[m]);
+				o.transform.x = getWorldX(j);
+				o.transform.y = getWorldY(i);
+
+				var md = mazeDirs[i][j];
+				if (md != 0) {
+					o.transform.rotateZ(lue.math.Math.degToRad(md * 90));
 				}
+
+				owner.addChild(o);
 			}
+		}
+
+		// Things
+		for (t in things) {
+			var o = scene.createNode(thingNodes[t.type]);
+			o.transform.x = getWorldX(t.x);
+			o.transform.y = getWorldY(t.y);
+
+			if (t.dir != 0) {
+				o.transform.rotateZ(lue.math.Math.degToRad(t.dir * 90));
+			}
+
+			t.object = o;
+			owner.addChild(o);
 		}
     }
 
     public function isWall(x:Int, y:Int) {
     	if (x < 0 || x > mazeWidth - 1 || y < 0 || y > mazeHeight - 1) return true;
-    	return maze[y][x] == 1 ? true : false;
+    	return maze[y][x] == TILE_WALL ? true : false;
+    }
+
+    public function isStairs(x:Int, y:Int) {
+    	if (x < 0 || x > mazeWidth - 1 || y < 0 || y > mazeHeight - 1) return false;
+    	return maze[y][x] == TILE_STAIRS ? true : false;
     }
 
     public function getWorldX(x:Int) {
@@ -115,5 +97,29 @@ class MazeGenerator extends Trait {
 
     public function getWorldY(y:Int) {
     	return y * tileSize - (mazeHeight - 1) * tileSize / 2;
+    }
+
+    public static function nextFloor() {
+    	currentFloor++;
+    }
+
+    public function getThingById(id:Int):Thing {
+    	for (t in things) {
+    		if (t.id == id) return t;
+    	}
+    	return null;
+    }
+
+    public function gateAction(t:Thing) {
+    	// Open
+    	if (t.state == 0) {
+    		t.state = 1;
+    		t.object.transform.z = 1.8;
+    	}
+    	// Close
+    	else {
+    		t.state = 0;
+    		t.object.transform.z = 0;
+    	}
     }
 }

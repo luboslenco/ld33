@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"str",
+				"strafe"
+			],
+			[
+				"st",
+				"strafeDif"
+			],
+			[
+				"stra",
+				"strafeLeft"
+			],
+			[
 				"ren",
 				"renderTraitsOnly"
 			],
@@ -502,23 +514,19 @@
 			[
 				"dra",
 				"drawHelp"
-			],
-			[
-				"windowe",
-				"windowEnded"
-			],
-			[
-				"wind",
-				"window"
-			],
-			[
-				"ratio",
-				"ratios"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "Sources/myproject/MazeGenerator.hx",
+			"settings":
+			{
+				"buffer_size": 2898,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -627,17 +635,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 115.0,
-		"last_filter": "osx",
+		"height": 313.0,
+		"last_filter": "ht",
 		"selected_items":
 		[
 			[
-				"osx",
-				"Build With: Kha - OSX-Run"
+				"ht",
+				"Build With: Kha - HTML5-Run"
 			],
 			[
-				"ht",
-				"Build With: Kha - HTML5"
+				"osx",
+				"Build With: Kha - OSX-Run"
 			],
 			[
 				"o",
@@ -734,10 +742,20 @@
 	"expanded_folders":
 	[
 		"/Users/lubos/Documents/Sublime/ld33/MyProject",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources"
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject"
 	],
 	"file_history":
 	[
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/project.kha",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/StepCamera.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/camera/Camera.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/MazeGenerator.hx",
+		"/Users/lubos/Library/Application Support/Sublime Text 3/Packages/Haxe/Kha.sublime-build",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/GameScene.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/Root.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/Scene.json",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/SceneFormat.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/.gitignore",
 		"/Users/lubos/Documents/Sublime/cs2/.gitignore",
 		"/Users/lubos/Documents/Sublime/lued/project.kha",
@@ -856,20 +874,11 @@
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/node/SineNode.hx",
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/node/ScaleValueNode.hx",
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/node/Node.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/node/IntNode.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/node/FloatNode.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/node/BoolNode.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/math/Vec3.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/math/Tri2.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/math/Sphere.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/math/Rect.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/math/Ray.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/math/Quat.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/math/Math.hx"
+		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/node/IntNode.hx"
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -895,6 +904,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"strafeLast",
+			"pos",
+			"move",
+			"moveRight",
+			"moveLeft",
+			"move",
+			"dist",
+			" + strafe",
+			" - strafe",
+			"true",
+			"rightPressed",
+			"leftPressed",
+			"downPressed",
+			"upPressed",
+			"spawn",
 			"enter",
 			"loadfont",
 			"TNode",
@@ -1007,22 +1031,7 @@
 			"input",
 			"Input",
 			":Bool",
-			":Float",
-			"get",
-			"never",
-			"moved",
-			"downListener",
-			"createObject",
-			"opaci",
-			"G.begin",
-			"g.begin",
-			"G.begin",
-			"g.begin",
-			"opacit",
-			"drawStringSmall",
-			"drawstr",
-			"deltaIntersect",
-			"gizmoPoint"
+			":Float"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1040,8 +1049,38 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Sources/myproject/MazeGenerator.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2898,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								695,
+								695
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1078,7 +1117,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 98.0
+		"height": 77.0
 	},
 	"output.find_results":
 	{
@@ -1102,8 +1141,40 @@
 		"selected_items":
 		[
 			[
+				"proje",
+				"project.kha"
+			],
+			[
 				"proj",
 				"project.kha"
+			],
+			[
+				"camera",
+				"Libraries/lue/Sources/lue/trait/camera/Camera.hx"
+			],
+			[
+				"maze",
+				"Sources/myproject/MazeGenerator.hx"
+			],
+			[
+				"stepca",
+				"Sources/myproject/StepCamera.hx"
+			],
+			[
+				"root",
+				"Libraries/lue/Sources/lue/Root.hx"
+			],
+			[
+				"gamesc",
+				"Libraries/lue/Sources/lue/trait/GameScene.hx"
+			],
+			[
+				"scene.",
+				"Assets/Scene.json"
+			],
+			[
+				"scene",
+				"Libraries/lue/Sources/lue/sys/importer/SceneFormat.hx"
 			],
 			[
 				"zui",
@@ -1118,16 +1189,8 @@
 				"Kha/Sources/kha/Loader.hx"
 			],
 			[
-				"gamesc",
-				"Libraries/lue/Sources/lue/trait/GameScene.hx"
-			],
-			[
 				"ui",
 				"Sources/lued/UI.hx"
-			],
-			[
-				"camera",
-				"Libraries/lue/Sources/lue/trait/camera/Camera.hx"
 			],
 			[
 				"irender",
@@ -1152,10 +1215,6 @@
 			[
 				"scenef",
 				"Libraries/lue/Sources/lue/sys/importer/SceneFormat.hx"
-			],
-			[
-				"scene",
-				"MyProject/Assets/Scene.json"
 			],
 			[
 				"debugre",
@@ -1188,10 +1247,6 @@
 			[
 				"objectc",
 				"Sources/lued/ObjectCreator.hx"
-			],
-			[
-				"stepca",
-				"MyProject/Sources/myproject/StepCamera.hx"
 			],
 			[
 				"mazeg",
@@ -1228,10 +1283,6 @@
 			[
 				"projec",
 				"Sources/lued/Project.hx"
-			],
-			[
-				"root",
-				"Libraries/lue/Sources/lue/Root.hx"
 			],
 			[
 				"project.",
@@ -1276,10 +1327,6 @@
 			[
 				"cube",
 				"Assets/cube_geometry.json"
-			],
-			[
-				"scene.",
-				"MyProject/Assets/Scene.json"
 			],
 			[
 				"cubege",
@@ -1562,10 +1609,6 @@
 				"Sources/laried/PlayController.hx"
 			],
 			[
-				"proje",
-				"project.kha"
-			],
-			[
 				"zbl",
 				"Libraries/zblend/blender/zblend_scene.py"
 			],
@@ -1608,10 +1651,6 @@
 			[
 				"bullet",
 				"Libraries/haxebullet/Sources/haxebullet/Bullet.hx"
-			],
-			[
-				"graphics2.hx",
-				"Kha/Sources/kha/graphics4/Graphics2.hx"
 			]
 		],
 		"width": 0.0
