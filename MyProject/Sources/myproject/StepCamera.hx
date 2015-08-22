@@ -18,8 +18,8 @@ class StepCamera extends Trait implements IUpdateable {
 
 	var maze:MazeGenerator;
 
-	var posX:Int;
-	var posY:Int;
+	public var posX:Int;
+	public var posY:Int;
 	var dir:Int;
 
 	var rotCurrent = 0.0;
@@ -124,6 +124,16 @@ class StepCamera extends Trait implements IUpdateable {
 		moveTo(targetX, targetY, dist, "strafe");
 	}
 
+	function delayMove(t = 0.2) {
+		moveComplete = false;
+		motion.Actuate.timer(t).onComplete(moved);
+	}
+
+	function moved() {
+		moveComplete = true;
+		maze.moveThings();
+	}
+
 	function moveTo(targetX:Int, targetY:Int, dist:Int, type:String) {
 		
 		// Check for things
@@ -137,11 +147,18 @@ class StepCamera extends Trait implements IUpdateable {
 					var tt = maze.getThingById(t.targetId);
 					if (tt != null && tt.type == MazeGenerator.THING_GATE) {
 						maze.gateAction(tt);
+						delayMove();
 					}
 					return;
 				}
+				// Gate
 				else if (t.type == MazeGenerator.THING_GATE) {
 					// Gate closed
+					if (t.state == 0) { return; }
+				}
+				// Hammer
+				else if (t.type == MazeGenerator.THING_HAMMER) {
+					// Hammer down
 					if (t.state == 0) { return; }
 				}
 			}
@@ -166,10 +183,10 @@ class StepCamera extends Trait implements IUpdateable {
 			posY = targetY;
 
 			if (type == "move") {
-				motion.Actuate.tween(this, moveTime, {posCurrent:MazeGenerator.tileSize * dist}).onComplete(function() {moveComplete = true;});
+				motion.Actuate.tween(this, moveTime, {posCurrent:MazeGenerator.tileSize * dist}).onComplete(moved);
 			}
 			else if (type == "strafe") {
-				motion.Actuate.tween(this, moveTime, {strafeCurrent:MazeGenerator.tileSize * dist}).onComplete(function() {moveComplete = true;});
+				motion.Actuate.tween(this, moveTime, {strafeCurrent:MazeGenerator.tileSize * dist}).onComplete(moved);
 			}
 
 			// Level completed
@@ -181,10 +198,7 @@ class StepCamera extends Trait implements IUpdateable {
 				motion.Actuate.tween(this, moveTime, {liftCurrent:MazeGenerator.tileSize * dist}).onComplete(function() {});
 
 				// Reset and load next floor
-				var trans = new lue.trait2d.effect.TransitionTrait(lue.Root.gameData.scene, 0.3);
-				var o = new lue.core.Object();
-				o.addTrait(trans);
-				Root.addChild(o);
+				maze.reset();
 			}
 		}
 	}

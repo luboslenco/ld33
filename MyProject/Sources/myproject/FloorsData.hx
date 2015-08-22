@@ -11,6 +11,8 @@ class Thing {
 	public var id:Int = -1;
 	public var targetId:Int = -2;
 	public var state:Int = 0;
+	public var rate:Int = 2;
+	public var i:Int = 0;
 	public var object:lue.core.Object;
 }
 
@@ -97,7 +99,7 @@ class FloorsData {
 				[1, 1, 1, 1, 1],
 				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
-				[1, 0, 1, 0, 1],
+				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
 				[1, 0, 0, 0, 1],
@@ -116,8 +118,59 @@ class FloorsData {
 			f.startX = 2;
 			f.startY = 1;
 			f.startDir = 0;
+			f.things.push(makeHammer(1, 3, 1));
+			f.things.push(makeHammer(2, 3, 0));
+			f.things.push(makeHammer(3, 3, 1));
+		}
+
+
+
+		if (i == 3) {
+			f.data = [
+				[1, 1, 1, 1, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[1, 1, 2, 1, 1]
+			];
+			f.dirs = [
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0],
+				[0, 0, 3, 0, 0]
+			];
+			f.startX = 2;
+			f.startY = 1;
+			f.startDir = 0;
+			f.things.push(makeSpike(1, 3, 0));
+			f.things.push(makeSpike(2, 3, 0));
+			f.things.push(makeSpike(3, 3, 0));
+			//
+			f.things.push(makeSpike(1, 4, 1));
+			f.things.push(makeSpike(3, 4, 1));
+			//
+			f.things.push(makeSpike(2, 5, 0));
 		}
 
 		return f;
+	}
+
+	static function makeHammer(x:Int, y:Int, state:Int):Thing {
+		var t = new Thing(MazeGenerator.THING_HAMMER, x, y);
+		t.state = state;
+		return t;
+	}
+
+	static function makeSpike(x:Int, y:Int, i:Int):Thing {
+		var t = new Thing(MazeGenerator.THING_SPIKE, x, y);
+		t.i = i;
+		return t;
 	}
 }

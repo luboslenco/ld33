@@ -7,7 +7,7 @@ import myproject.FloorsData;
 
 class MazeGenerator extends Trait {
 
-	static var currentFloor = 1;
+	static var currentFloor = 3;
 
 	public static inline var tileSize = 2;
 
@@ -17,6 +17,10 @@ class MazeGenerator extends Trait {
 
 	public static inline var THING_LEVER = 0;
 	public static inline var THING_GATE = 1;
+	public static inline var THING_HAMMER = 2;
+	public static inline var THING_SPIKE = 3;
+
+	var cam:StepCamera;
 
 	public var floor:Floor;
 	var maze:Array<Array<Int>>;
@@ -39,6 +43,8 @@ class MazeGenerator extends Trait {
     }
 
     function init() {
+    	cam = Root.getChild("Camera").getTrait(StepCamera);
+
     	var scene = Root.gameScene;
 		var nodes:Array<TNode> = [];
 		nodes.push(scene.getNode("Floor"));
@@ -48,6 +54,8 @@ class MazeGenerator extends Trait {
 		var thingNodes:Array<TNode> = [];
 		thingNodes.push(scene.getNode("Lever"));
 		thingNodes.push(scene.getNode("Gate"));
+		thingNodes.push(scene.getNode("Hammer"));
+		thingNodes.push(scene.getNode("Spike"));
 
 		// Tiles
 		for (i in 0...mazeHeight) {
@@ -77,6 +85,7 @@ class MazeGenerator extends Trait {
 			}
 
 			t.object = o;
+			initThing(t);
 			owner.addChild(o);
 		}
     }
@@ -114,12 +123,72 @@ class MazeGenerator extends Trait {
     	// Open
     	if (t.state == 0) {
     		t.state = 1;
-    		t.object.transform.z = 1.8;
+    		motion.Actuate.tween(t.object.transform, 0.2, {z: 1.8});
     	}
     	// Close
     	else {
     		t.state = 0;
-    		t.object.transform.z = 0;
+    		motion.Actuate.tween(t.object.transform, 0.2, {z: 0});
     	}
+    }
+
+    public function moveThings() {
+    	for (t in things) {
+    		// Hammers
+    		if (t.type == THING_HAMMER) {
+    			t.i++;
+    			if (t.i >= t.rate) {
+    				t.i = 0;
+	    			// Move up
+	    			if (t.state == 0) {
+	    				t.state = 1;
+	    				motion.Actuate.tween(t.object.transform, 0.2, {z: 1.8});
+	    			}
+	    			// Move down
+	    			else {
+	    				t.state = 0;
+	    				motion.Actuate.tween(t.object.transform, 0.2, {z: 0});
+	    				// Check player
+	    				if (t.x == cam.posX && t.y == cam.posY) {
+	    					reset();
+	    				}
+	    			}
+	    		}
+    		}
+    		// Spikes
+    		else if (t.type == THING_SPIKE) {
+    			t.i++;
+    			if (t.i >= t.rate) {
+    				t.i = 0;
+    				// Hit
+    				var originZ = t.object.transform.z;
+    				motion.Actuate.tween(t.object.transform, 0.1, {z: 0}).onComplete(function() {
+    					motion.Actuate.tween(t.object.transform, 0.1, {z: originZ});
+    				});
+    				// Check player
+    				if (t.x == cam.posX && t.y == cam.posY) {
+    					reset();
+    				}
+    			}
+    		}
+    	}
+    }
+
+    function initThing(t:Thing) {
+    	if (t.type == THING_GATE || t.type == THING_HAMMER) {
+    		if (t.state == 1) {
+    			t.object.transform.z = 1.8;
+    		}
+    	}
+    	else if (t.type == THING_SPIKE) {
+    		t.object.transform.z = -0.8;
+    	}
+    }
+
+    public function reset() {
+    	var trans = new lue.trait2d.effect.TransitionTrait(lue.Root.gameData.scene, 0.3);
+		var o = new lue.core.Object();
+		o.addTrait(trans);
+		Root.addChild(o);
     }
 }
