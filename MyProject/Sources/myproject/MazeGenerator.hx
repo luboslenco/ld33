@@ -1,6 +1,7 @@
 package myproject;
 
 import lue.core.Trait;
+import lue.core.Object;
 import lue.Root;
 import lue.sys.importer.SceneFormat;
 import myproject.FloorsData;
@@ -90,6 +91,20 @@ class MazeGenerator extends Trait {
 			initThing(t);
 			owner.addChild(o);
 		}
+
+        // Floor text
+        if (currentFloor == 0) {
+            var ft = new IntroTextRenderer();
+            var fto = new Object();
+            fto.addTrait(ft);
+            Root.addChild(fto);
+        }
+        else if (currentFloor <= 6) {
+            var ft = new FloorTextRenderer(currentFloor);
+            var fto = new Object();
+            fto.addTrait(ft);
+            Root.addChild(fto);
+        }
     }
 
     function placeNode(nodes:Array<TNode>, nodePos:Int, i:Int, j:Int) {
@@ -143,6 +158,19 @@ class MazeGenerator extends Trait {
     		if (t.id == id) return t;
     	}
     	return null;
+    }
+
+    public function leverAction(t:Thing) {
+        // Open
+        if (t.state == 0) {
+            t.state = 1;
+            motion.Actuate.tween(t.object.transform, 0.2, {z: -0.5});
+        }
+        // Close
+        else {
+            t.state = 0;
+            motion.Actuate.tween(t.object.transform, 0.2, {z: 0});
+        }
     }
 
     public function gateAction(t:Thing) {
@@ -242,7 +270,7 @@ class MazeGenerator extends Trait {
 
     public function reset() {
     	var trans = new lue.trait2d.effect.TransitionTrait(lue.Root.gameData.scene, 0.3);
-		var o = new lue.core.Object();
+		var o = new Object();
 		o.addTrait(trans);
 		Root.addChild(o);
     }

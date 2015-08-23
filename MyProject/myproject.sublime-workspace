@@ -523,7 +523,31 @@
 			"file": "Sources/myproject/StepCamera.hx",
 			"settings":
 			{
-				"buffer_size": 6554,
+				"buffer_size": 6581,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Sources/myproject/MazeGenerator.hx",
+			"settings":
+			{
+				"buffer_size": 6919,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Sources/myproject/FloorTextRenderer.hx",
+			"settings":
+			{
+				"buffer_size": 419,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "project.kha",
+			"settings":
+			{
+				"buffer_size": 615,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,7 +555,7 @@
 			"file": "Sources/myproject/FloorsData.hx",
 			"settings":
 			{
-				"buffer_size": 5557,
+				"buffer_size": 5603,
 				"line_ending": "Unix"
 			}
 		}
@@ -652,12 +676,12 @@
 				"Build With: Kha - HTML5-Run"
 			],
 			[
-				"h",
-				"Build With: Kha - HTML5-Run"
-			],
-			[
 				"osx",
 				"Build With: Kha - OSX-Run"
+			],
+			[
+				"h",
+				"Build With: Kha - HTML5-Run"
 			],
 			[
 				"o",
@@ -755,6 +779,10 @@
 	],
 	"file_history":
 	[
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics2/Graphics.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics4/Graphics.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/project.kha",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/Assets.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/MazeGenerator.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/FloorsData.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/gameData.json",
@@ -765,7 +793,6 @@
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/Root.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/SceneFormat.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/GameFormat.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/project.kha",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/camera/Camera.hx",
 		"/Users/lubos/Library/Application Support/Sublime Text 3/Packages/Haxe/Kha.sublime-build",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/GameScene.hx",
@@ -879,10 +906,7 @@
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/sys/importer/SceneData.hx",
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/sys/importer/PsdFormat.hx",
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/sys/importer/PsdData.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/sys/importer/ProjectFormat.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/sys/importer/EmitterMold.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/node/VectorNode.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/node/TransformNode.hx"
+		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/sys/importer/ProjectFormat.hx"
 	],
 	"find":
 	{
@@ -912,6 +936,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"fanwood_italic",
+			"draws",
+			"object",
+			"Object",
+			"lever",
 			"t2",
 			"t1",
 			"state",
@@ -1034,12 +1063,7 @@
 			"owner",
 			"Assets",
 			"name",
-			"Assets",
-			"input",
-			"Input",
-			"input",
-			"Input",
-			"input"
+			"Assets"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1057,7 +1081,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1066,15 +1090,73 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6554,
+						"buffer_size": 6581,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3925,
-								3925
+								3483,
+								3483
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 10.0,
+						"translation.y": 2803.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Sources/myproject/MazeGenerator.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6919,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1024,
+								1024
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 678.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Sources/myproject/FloorTextRenderer.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								303,
+								303
 							]
 						],
 						"settings":
@@ -1082,27 +1164,56 @@
 							"syntax": "Packages/Haxe/Haxe.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3494.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "Sources/myproject/FloorsData.hx",
+					"buffer": 3,
+					"file": "project.kha",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5557,
+						"buffer_size": 615,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4579,
-								4579
+								26,
+								26
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haxe/Kha.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 30.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Sources/myproject/FloorsData.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5603,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								853,
+								853
 							]
 						],
 						"settings":
@@ -1111,10 +1222,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4803.0,
+						"translation.y": 438.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1153,7 +1264,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 100.0
+		"height": 138.0
 	},
 	"output.find_results":
 	{
@@ -1176,6 +1287,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"graphics",
+				"Kha/Sources/kha/graphics2/Graphics.hx"
+			],
+			[
+				"proj",
+				"project.kha"
+			],
+			[
+				"assets",
+				"Libraries/lue/Sources/lue/sys/Assets.hx"
+			],
 			[
 				"gameda",
 				"Assets/gameData.json"
@@ -1217,10 +1340,6 @@
 				"project.kha"
 			],
 			[
-				"proj",
-				"project.kha"
-			],
-			[
 				"camera",
 				"Libraries/lue/Sources/lue/trait/camera/Camera.hx"
 			],
@@ -1247,10 +1366,6 @@
 			[
 				"zui",
 				"Libraries/zui/Sources/zui/Zui.hx"
-			],
-			[
-				"assets",
-				"Libraries/lue/Sources/lue/sys/Assets.hx"
 			],
 			[
 				"laoder",
@@ -1571,10 +1686,6 @@
 			[
 				"ext",
 				"Libraries/zui/Sources/zui/Ext.hx"
-			],
-			[
-				"graphics",
-				"Kha/Sources/kha/graphics4/Graphics.hx"
 			],
 			[
 				"vec3",

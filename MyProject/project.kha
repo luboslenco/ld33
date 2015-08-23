@@ -5,6 +5,10 @@
 			"neighbours": [],
 			"name": "room1",
 			"assets": [
+				"intro_metadata",
+				"floor_metadata",
+				"intro_atlas",
+				"floor_atlas",
 				"gameData",
 				"Scene"
 			]
@@ -18,11 +22,31 @@
 	],
 	"game": {
 		"width": 1136,
-		"height": 640,
+		"antiAliasingSamples": 2,
 		"name": "Empty",
-		"antiAliasingSamples": 2
+		"height": 640
 	},
 	"assets": [
+		{
+			"type": "blob",
+			"file": "intro_metadata.json",
+			"name": "intro_metadata"
+		},
+		{
+			"type": "blob",
+			"file": "floor_metadata.json",
+			"name": "floor_metadata"
+		},
+		{
+			"type": "image",
+			"file": "intro_atlas.png",
+			"name": "intro_atlas"
+		},
+		{
+			"type": "image",
+			"file": "floor_atlas.png",
+			"name": "floor_atlas"
+		},
 		{
 			"type": "blob",
 			"file": "gameData.json",

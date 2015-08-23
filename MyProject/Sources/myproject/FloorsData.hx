@@ -24,6 +24,7 @@ class Floor {
 	public var startY:Int;
 	public var startDir:Int;
 	public var things:Array<Thing> = [];
+	public var text:String = "";
 }
 
 class FloorsData {
@@ -32,6 +33,7 @@ class FloorsData {
 		var f = new Floor();
 
 		if (i == 0) {
+			f.text = "Hello";
 			f.data = [
 				[1, 1, 1, 1, 1],
 				[1, 0, 0, 0, 1],

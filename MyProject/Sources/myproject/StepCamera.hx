@@ -146,6 +146,7 @@ class StepCamera extends Trait implements IUpdateable {
 					// Set state of target
 					var tt = maze.getThingById(t.targetId);
 					if (tt != null && tt.type == MazeGenerator.THING_GATE) {
+						maze.leverAction(t);
 						maze.gateAction(tt);
 						delayMove();
 					}
