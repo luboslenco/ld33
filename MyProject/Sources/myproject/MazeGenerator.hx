@@ -34,9 +34,12 @@ class MazeGenerator extends Trait {
 	var things:Array<Thing>;
 
     static var firstInstance = true;
+    public static var inst:MazeGenerator = null;
 
     public function new() {
         super();
+
+        inst = this;
 
         floor = FloorsData.getFloor(currentFloor);
         maze = floor.data;
@@ -105,6 +108,11 @@ class MazeGenerator extends Trait {
 			initThing(t);
 			owner.addChild(o);
 		}
+
+        // UI
+        var uio = new Object();
+        uio.addTrait(new UIRenderer());
+        Root.addChild(uio);
 
         // Floor text
         var cf = lue.sys.Storage.getValue(S.CurrentFloor);

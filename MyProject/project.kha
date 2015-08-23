@@ -7,8 +7,10 @@
 			"assets": [
 				"intro_metadata",
 				"floor_metadata",
+				"ui_metadata",
 				"intro_atlas",
 				"floor_atlas",
+				"ui_atlas",
 				"die",
 				"step",
 				"lever",
@@ -26,9 +28,9 @@
 	],
 	"game": {
 		"width": 1136,
-		"antiAliasingSamples": 2,
+		"height": 640,
 		"name": "Empty",
-		"height": 640
+		"antiAliasingSamples": 2
 	},
 	"assets": [
 		{
@@ -42,6 +44,11 @@
 			"name": "floor_metadata"
 		},
 		{
+			"type": "blob",
+			"file": "ui_metadata.json",
+			"name": "ui_metadata"
+		},
+		{
 			"type": "image",
 			"file": "intro_atlas.png",
 			"name": "intro_atlas"
@@ -50,6 +57,11 @@
 			"type": "image",
 			"file": "floor_atlas.png",
 			"name": "floor_atlas"
+		},
+		{
+			"type": "image",
+			"file": "ui_atlas.png",
+			"name": "ui_atlas"
 		},
 		{
 			"type": "sound",
