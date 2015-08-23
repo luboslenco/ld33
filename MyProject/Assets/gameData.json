@@ -24,7 +24,7 @@
 	"fog": 0,
 	"shadowMapping": 0,
 	"ssao": 0,
-	"physics": 1,
+	"physics": 0,
 	"scenes": [
 		"Scene"
 	]

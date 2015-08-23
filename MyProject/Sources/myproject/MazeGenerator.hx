@@ -8,7 +8,7 @@ import myproject.FloorsData;
 
 class MazeGenerator extends Trait {
 
-	static var currentFloor = 1;
+	static var currentFloor = 10;
 
 	public static inline var tileSize = 2;
 
@@ -126,7 +126,7 @@ class MazeGenerator extends Trait {
             fto.addTrait(ft);
             Root.addChild(fto);
         }
-        else if (currentFloor <= 6 && cf < currentFloor) {
+        else if ((currentFloor <= 6 || currentFloor == 11) && cf < currentFloor) {
             var ft = new FloorTextRenderer(currentFloor);
             var fto = new Object();
             fto.addTrait(ft);

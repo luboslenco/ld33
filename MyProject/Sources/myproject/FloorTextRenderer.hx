@@ -33,7 +33,7 @@ class FloorTextRenderer extends Trait implements IRenderable2D {
 
 		g.color = kha.Color.White;
 		g.opacity = 1 * (bgOp * 1.4);
-		data.drawLayer(g, floorLayer, floorLayer.x, floorLayer.y);
+		data.drawLayer(g, floorLayer, Root.w / 2 - floorLayer.w / 2, Root.h / 2 - floorLayer.h / 2);
 	}
 
 	function onDown(key:kha.Key, char:String) {

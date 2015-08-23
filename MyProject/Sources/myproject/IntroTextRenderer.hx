@@ -37,14 +37,14 @@ class IntroTextRenderer extends Trait implements IRenderable2D {
 
 		g.color = kha.Color.White;
 		g.opacity = 1 * (bgOp * 1.4);
-		data.drawLayer(g, titleLayer, titleLayer.x, titleLayer.y);
-		data.drawLayer(g, lineLayer, lineLayer.x, lineLayer.y);
+		data.drawLayer(g, titleLayer, Root.w / 2 - titleLayer.w / 2, titleLayer.y);
+		data.drawLayer(g, lineLayer, Root.w / 2 - lineLayer.w / 2, lineLayer.y);
 
 		g.opacity = 1;
 		g.color = kha.Color.fromFloats(0, 0, 0, 0.7);
 		g.fillRect(0, Root.h - 90, Root.w, 90);
 		g.color = kha.Color.White;
-		data.drawLayer(g, controlsLayer, controlsLayer.x, controlsLayer.y);
+		data.drawLayer(g, controlsLayer, Root.w / 2 - controlsLayer.w / 2, Root.h - (640 - controlsLayer.y));
 	}
 
 	function onDown(key:kha.Key, char:String) {
