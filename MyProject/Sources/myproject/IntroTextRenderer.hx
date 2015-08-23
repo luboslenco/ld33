@@ -36,7 +36,7 @@ class IntroTextRenderer extends Trait implements IRenderable2D {
 		}
 
 		g.color = kha.Color.White;
-		g.opacity = bgOp;
+		g.opacity = 1 * (bgOp * 1.4);
 		data.drawLayer(g, titleLayer, titleLayer.x, titleLayer.y);
 		data.drawLayer(g, lineLayer, lineLayer.x, lineLayer.y);
 

@@ -136,7 +136,8 @@ class StepCamera extends Trait implements IUpdateable {
 	}
 
 	function moveTo(targetX:Int, targetY:Int, dist:Int, type:String) {
-		
+		if (maze.gameOver) return;
+
 		// Check for things
 		var things = maze.floor.things;
 		for (t in things) {

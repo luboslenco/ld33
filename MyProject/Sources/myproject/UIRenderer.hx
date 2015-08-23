@@ -18,6 +18,10 @@ class UIRenderer extends Trait implements IRenderable2D implements IUpdateable {
 	var respawnLayer:TPsdLayer;
 	var compassLayer:TPsdLayer;
 
+	var soundOffset:Float = -100;
+	var musicOffset:Float = -100;
+	var respawnOffset:Float = -100;
+
 	var menuOn = false;
 
 	public function new() {
@@ -38,6 +42,17 @@ class UIRenderer extends Trait implements IRenderable2D implements IUpdateable {
 				Input.y >= menuLayer.y && Input.y <= menuLayer.y + menuLayer.h) {
 
 				menuOn = !menuOn;
+
+				if (menuOn) {
+					motion.Actuate.tween(this, 0.2, {soundOffset: 0});
+					motion.Actuate.tween(this, 0.2, {musicOffset: 0}).delay(0.05);
+					motion.Actuate.tween(this, 0.2, {respawnOffset: 0}).delay(0.1);
+				}
+				else {
+					motion.Actuate.tween(this, 0.5, {soundOffset: -100}).delay(0.1);
+					motion.Actuate.tween(this, 0.5, {musicOffset: -100}).delay(0.05);
+					motion.Actuate.tween(this, 0.5, {respawnOffset: -100});
+				}
 			}
 
 			if (menuOn) {
@@ -74,17 +89,17 @@ class UIRenderer extends Trait implements IRenderable2D implements IUpdateable {
 		g.opacity = 1;
 		data.drawLayer(g, menuLayer, menuLayer.x, menuLayer.y);
 
-		if (menuOn) {
+		if (soundOffset > -100) {
 			if (lue.sys.Audio.musicOn) { g.opacity = 1; }
 			else { g.opacity = 0.5; }
-			data.drawLayer(g, musicLayer, musicLayer.x, musicLayer.y);
+			data.drawLayer(g, musicLayer, musicLayer.x, musicLayer.y + musicOffset);
 
 			if (lue.sys.Audio.soundOn) { g.opacity = 1; }
 			else { g.opacity = 0.5; }
-			data.drawLayer(g, soundLayer, soundLayer.x, soundLayer.y);
+			data.drawLayer(g, soundLayer, soundLayer.x, soundLayer.y + soundOffset);
 
 			g.opacity = 1;
-			data.drawLayer(g, respawnLayer, respawnLayer.x, respawnLayer.y);
+			data.drawLayer(g, respawnLayer, respawnLayer.x, respawnLayer.y + respawnOffset);
 		}
 
 		//data.drawLayer(g, compassLayer, compassLayer.x, compassLayer.y);

@@ -28,9 +28,9 @@
 	],
 	"game": {
 		"width": 1136,
-		"height": 640,
+		"antiAliasingSamples": 2,
 		"name": "Empty",
-		"antiAliasingSamples": 2
+		"height": 640
 	},
 	"assets": [
 		{

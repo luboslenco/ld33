@@ -36,6 +36,8 @@ class MazeGenerator extends Trait {
     static var firstInstance = true;
     public static var inst:MazeGenerator = null;
 
+    public var gameOver = false;
+
     public function new() {
         super();
 
@@ -299,6 +301,7 @@ class MazeGenerator extends Trait {
     }
 
     public function reset() {
+        gameOver = true;
     	var trans = new lue.trait2d.effect.TransitionTrait(lue.Root.gameData.scene, 0.3);
 		var o = new Object();
 		o.addTrait(trans);
