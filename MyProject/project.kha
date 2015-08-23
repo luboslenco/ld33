@@ -9,6 +9,9 @@
 				"floor_metadata",
 				"intro_atlas",
 				"floor_atlas",
+				"die",
+				"step",
+				"lever",
 				"music",
 				"gameData",
 				"Scene"
@@ -23,9 +26,9 @@
 	],
 	"game": {
 		"width": 1136,
-		"height": 640,
+		"antiAliasingSamples": 2,
 		"name": "Empty",
-		"antiAliasingSamples": 2
+		"height": 640
 	},
 	"assets": [
 		{
@@ -47,6 +50,21 @@
 			"type": "image",
 			"file": "floor_atlas.png",
 			"name": "floor_atlas"
+		},
+		{
+			"type": "sound",
+			"file": "die.wav",
+			"name": "die"
+		},
+		{
+			"type": "sound",
+			"file": "step.wav",
+			"name": "step"
+		},
+		{
+			"type": "sound",
+			"file": "lever.wav",
+			"name": "lever"
 		},
 		{
 			"type": "music",

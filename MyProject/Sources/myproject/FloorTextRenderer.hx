@@ -21,6 +21,7 @@ class FloorTextRenderer extends Trait implements IRenderable2D {
         floorLayer = data.getLayer("floor" + floorPos);
 
         motion.Actuate.tween(this, 2, {bgOp: 0}).delay(3);
+        kha.input.Keyboard.get().notify(onDown, null);
 	}
 
 	public function render2D(g:kha.graphics2.Graphics) {
@@ -33,5 +34,11 @@ class FloorTextRenderer extends Trait implements IRenderable2D {
 		g.color = kha.Color.White;
 		g.opacity = bgOp;
 		data.drawLayer(g, floorLayer, floorLayer.x, floorLayer.y);
+	}
+
+	function onDown(key:kha.Key, char:String) {
+		kha.input.Keyboard.get().remove(onDown, null);
+		motion.Actuate.stop(this);
+		motion.Actuate.tween(this, 2, {bgOp: 0});
 	}
 }

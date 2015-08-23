@@ -8,7 +8,7 @@ import myproject.FloorsData;
 
 class MazeGenerator extends Trait {
 
-	static var currentFloor = 0;
+	static var currentFloor = 1;
 
 	public static inline var tileSize = 2;
 
@@ -49,6 +49,13 @@ class MazeGenerator extends Trait {
 
         if (firstInstance) {
             firstInstance = false;
+
+            //if (lue.sys.Storage.getValue(S.StorageVersion) != STORAGE_VERSION) {
+                createStorage();
+            //}
+            lue.sys.Audio.musicOn = lue.sys.Storage.getValue(S.MusicOn);
+            lue.sys.Audio.soundOn = lue.sys.Storage.getValue(S.SoundOn);
+
             lue.sys.Audio.playMusic("music");
         }
     }
@@ -100,18 +107,20 @@ class MazeGenerator extends Trait {
 		}
 
         // Floor text
+        var cf = lue.sys.Storage.getValue(S.CurrentFloor);
         if (currentFloor == 0) {
             var ft = new IntroTextRenderer();
             var fto = new Object();
             fto.addTrait(ft);
             Root.addChild(fto);
         }
-        else if (currentFloor <= 6) {
+        else if (currentFloor <= 6 && cf < currentFloor) {
             var ft = new FloorTextRenderer(currentFloor);
             var fto = new Object();
             fto.addTrait(ft);
             Root.addChild(fto);
         }
+        lue.sys.Storage.setValue(S.CurrentFloor, currentFloor);
     }
 
     function placeNode(nodes:Array<TNode>, nodePos:Int, i:Int, j:Int) {
@@ -168,6 +177,7 @@ class MazeGenerator extends Trait {
     }
 
     public function leverAction(t:Thing) {
+        lue.sys.Audio.playSound("lever");
         // Open
         if (t.state == 0) {
             t.state = 1;
@@ -211,7 +221,7 @@ class MazeGenerator extends Trait {
 	    				motion.Actuate.tween(t.object.transform, 0.2, {z: 0});
 	    				// Check player
 	    				if (t.x == cam.posX && t.y == cam.posY) {
-	    					reset();
+	    					die();
 	    				}
 	    			}
 	    		}
@@ -228,7 +238,7 @@ class MazeGenerator extends Trait {
     				});
     				// Check player
     				if (t.x == cam.posX && t.y == cam.posY) {
-    					reset();
+    					die();
     				}
     			}
     		}
@@ -243,7 +253,7 @@ class MazeGenerator extends Trait {
     			motion.Actuate.tween(t.object.transform, 0.2, {x: getWorldX(t.x)});
     			// Check player
     			if (t.x == cam.posX && t.y == cam.posY) {
-    				reset();
+    				die();
     			}
     		}
     		// Guns
@@ -257,7 +267,7 @@ class MazeGenerator extends Trait {
     				motion.Actuate.tween(t.object.transform, 0.2, {x: getWorldX(t.x)});
     				// Check player
     				if (t.y == cam.posY) {
-    					reset();
+    					die();
     				}
     			}
     		}
@@ -275,10 +285,22 @@ class MazeGenerator extends Trait {
     	}
     }
 
+    function die() {
+        lue.sys.Audio.playSound("die");
+        reset();
+    }
+
     public function reset() {
     	var trans = new lue.trait2d.effect.TransitionTrait(lue.Root.gameData.scene, 0.3);
 		var o = new Object();
 		o.addTrait(trans);
 		Root.addChild(o);
+    }
+
+    static inline var STORAGE_VERSION = 1;
+    function createStorage() {
+        lue.sys.Storage.setValue(S.MusicOn, true);
+        lue.sys.Storage.setValue(S.SoundOn, true);
+        lue.sys.Storage.setValue(S.CurrentFloor, 0);
     }
 }

@@ -25,6 +25,7 @@ class IntroTextRenderer extends Trait implements IRenderable2D {
         controlsLayer = data.getLayer("controls");
 
         motion.Actuate.tween(this, 2, {bgOp: 0}).delay(3);
+        kha.input.Keyboard.get().notify(onDown, null);
 	}
 
 	public function render2D(g:kha.graphics2.Graphics) {
@@ -44,5 +45,11 @@ class IntroTextRenderer extends Trait implements IRenderable2D {
 		g.fillRect(0, Root.h - 90, Root.w, 90);
 		g.color = kha.Color.White;
 		data.drawLayer(g, controlsLayer, controlsLayer.x, controlsLayer.y);
+	}
+
+	function onDown(key:kha.Key, char:String) {
+		kha.input.Keyboard.get().remove(onDown, null);
+		motion.Actuate.stop(this);
+		motion.Actuate.tween(this, 2, {bgOp: 0});
 	}
 }

@@ -55,6 +55,7 @@ class StepCamera extends Trait implements IUpdateable {
     	// Set camera position
     	camera.transform.x = maze.getWorldX(posX);
     	camera.transform.y = maze.getWorldY(posY);
+    	if (dir != 0) camera.roll(-dir * lue.math.Math.degToRad(90));
     	camera.transform.dirty = true;
     	camera.transform.update();
     	camera.updateMatrix();
@@ -171,6 +172,8 @@ class StepCamera extends Trait implements IUpdateable {
 
 		// Move
 		if (!maze.isWall(targetX, targetY) && !maze.isStairsDown(targetX, targetY)) {
+
+			lue.sys.Audio.playSound("step");
 
 			moveComplete = false;
 			if (type == "move") {
