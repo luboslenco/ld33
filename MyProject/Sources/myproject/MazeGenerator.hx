@@ -65,14 +65,16 @@ class MazeGenerator extends Trait {
         }
     }
 
+    var cube2Node:TNode;
     function init() {
     	cam = Root.getChild("Camera").getTrait(StepCamera);
 
     	var scene = Root.gameScene;
 		var nodes:Array<TNode> = [];
 		nodes.push(scene.getNode("Floor"));
-		var ceilNodes = [scene.getNode("Ceil")];
+		var ceilNodes = [scene.getNode("Ceil"), scene.getNode("Ceil2"), scene.getNode("Ceil3")];
 		nodes.push(scene.getNode("Cube"));
+        cube2Node = scene.getNode("Cube2");
 		nodes.push(scene.getNode("Stairs"));
 		nodes.push(scene.getNode("StairsDown"));
 
@@ -91,7 +93,7 @@ class MazeGenerator extends Trait {
 				placeNode(nodes, m, i, j);
 				// Ceiling
 				if (m == TILE_EMPTY || m == TILE_STAIRS_DOWN) {
-					placeNode(ceilNodes, 0, i, j);
+					placeNode(ceilNodes, 0, i, j, true);
 				}
 			}
 		}
@@ -133,10 +135,12 @@ class MazeGenerator extends Trait {
         lue.sys.Storage.setValue(S.CurrentFloor, currentFloor);
     }
 
-    function placeNode(nodes:Array<TNode>, nodePos:Int, i:Int, j:Int) {
+    function placeNode(nodes:Array<TNode>, nodePos:Int, i:Int, j:Int, ceiling = false) {
     	var scene = Root.gameScene;
 
-    	var o = scene.createNode(nodes[nodePos]);
+        var node = nodes[nodePos];
+        //if (!ceiling && nodePos == 1 && Std.random(2) == 0) node = cube2Node;
+    	var o = scene.createNode(node);
 		o.transform.x = getWorldX(j);
 		o.transform.y = getWorldY(i);
 
