@@ -9,6 +9,7 @@
 				"floor_metadata",
 				"intro_atlas",
 				"floor_atlas",
+				"music",
 				"gameData",
 				"Scene"
 			]
@@ -22,9 +23,9 @@
 	],
 	"game": {
 		"width": 1136,
-		"antiAliasingSamples": 2,
+		"height": 640,
 		"name": "Empty",
-		"height": 640
+		"antiAliasingSamples": 2
 	},
 	"assets": [
 		{
@@ -46,6 +47,11 @@
 			"type": "image",
 			"file": "floor_atlas.png",
 			"name": "floor_atlas"
+		},
+		{
+			"type": "music",
+			"file": "music.wav",
+			"name": "music"
 		},
 		{
 			"type": "blob",

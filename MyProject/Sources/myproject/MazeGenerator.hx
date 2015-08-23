@@ -33,6 +33,8 @@ class MazeGenerator extends Trait {
 	var mazeHeight:Int;
 	var things:Array<Thing>;
 
+    static var firstInstance = true;
+
     public function new() {
         super();
 
@@ -44,6 +46,11 @@ class MazeGenerator extends Trait {
         things = floor.things;
 
         Root.registerInit(init);
+
+        if (firstInstance) {
+            firstInstance = false;
+            lue.sys.Audio.playMusic("music");
+        }
     }
 
     function init() {
