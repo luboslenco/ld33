@@ -4,8 +4,12 @@
 		"selected_items":
 		[
 			[
+				"respa",
+				"respawnOffset"
+			],
+			[
 				"soun",
-				"soundOn"
+				"soundOffset"
 			],
 			[
 				"menu",
@@ -510,10 +514,6 @@
 			[
 				"cals",
 				"class_name"
-			],
-			[
-				"geome",
-				"geometry_objects"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "Sources/myproject/MazeGenerator.hx",
 			"settings":
 			{
-				"buffer_size": 8296,
+				"buffer_size": 8624,
 				"line_ending": "Unix"
 			}
 		}
@@ -635,17 +635,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 313.0,
-		"last_filter": "ht",
+		"height": 115.0,
+		"last_filter": "osx",
 		"selected_items":
 		[
 			[
-				"ht",
-				"Build With: Kha - HTML5-Run"
-			],
-			[
 				"osx",
 				"Build With: Kha - OSX-Run"
+			],
+			[
+				"ht",
+				"Build With: Kha - HTML5-Run"
 			],
 			[
 				"h",
@@ -747,14 +747,22 @@
 	],
 	"file_history":
 	[
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/FloorsData.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/UIRenderer.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/StepCamera.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/build/html5/index.html",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/FloorTextRenderer.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/IntroTextRenderer.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/MazeGenerator.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/gameData.json",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/GameScene.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/Main.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/Loader.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/mesh.frag.glsl",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/StepCamera.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/UIRenderer.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/project.lue",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Backends/Kore/khacpp/toolchain/haxe-target.xml",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/FloorsData.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/build/osx-build/Sources/include/kha/_SuperString/SuperString_Impl_.h",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/S.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/IntroTextRenderer.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/FloorTextRenderer.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/input/Keyboard.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/input/Mouse.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/Mouse.hx",
@@ -774,15 +782,12 @@
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics2/Graphics.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics4/Graphics.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/Assets.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/gameData.json",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/SceneData.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/Main.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/Root.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/SceneFormat.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/GameFormat.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/camera/Camera.hx",
 		"/Users/lubos/Library/Application Support/Sublime Text 3/Packages/Haxe/Kha.sublime-build",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/GameScene.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/Scene.json",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/.gitignore",
 		"/Users/lubos/Documents/Sublime/cs2/.gitignore",
@@ -869,12 +874,7 @@
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/SceneInstance.hx",
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/Animation.hx",
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/renderer/SkydomeMeshRenderer.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/renderer/ParticlesRenderer.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/renderer/BillboardRenderer.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/physics/VehicleWheel.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/physics/VehicleBody.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/physics/RigidBody.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/physics/PhysicsScene.hx"
+		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/renderer/ParticlesRenderer.hx"
 	],
 	"find":
 	{
@@ -904,6 +904,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"parsep",
+			"physics",
+			"ceilNodes",
+			"die",
 			"sound",
 			"menu",
 			"x",
@@ -1027,11 +1031,7 @@
 			"blender",
 			"laried",
 			"lued",
-			"laried",
-			"lari",
-			".lari",
-			"laried",
-			"lariData"
+			"laried"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1058,15 +1058,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8296,
+						"buffer_size": 8624,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1435,
-								1435
+								173,
+								173
 							]
 						],
 						"settings":
@@ -1076,7 +1076,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 712.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1142,6 +1142,46 @@
 		"selected_items":
 		[
 			[
+				"maze",
+				"Sources/myproject/MazeGenerator.hx"
+			],
+			[
+				"introte",
+				"Sources/myproject/IntroTextRenderer.hx"
+			],
+			[
+				"loader",
+				"Kha/Sources/kha/Loader.hx"
+			],
+			[
+				"gameda",
+				"Assets/gameData.json"
+			],
+			[
+				"gamesc",
+				"Libraries/lue/Sources/lue/trait/GameScene.hx"
+			],
+			[
+				"stepc",
+				"Sources/myproject/StepCamera.hx"
+			],
+			[
+				"step",
+				"Sources/myproject/StepCamera.hx"
+			],
+			[
+				"floort",
+				"Sources/myproject/FloorTextRenderer.hx"
+			],
+			[
+				"ht",
+				"Kha/Backends/Kore/khacpp/toolchain/haxe-target.xml"
+			],
+			[
+				"mazege",
+				"Sources/myproject/MazeGenerator.hx"
+			],
+			[
 				"stepca",
 				"Sources/myproject/StepCamera.hx"
 			],
@@ -1174,16 +1214,8 @@
 				"Libraries/lue/Sources/lue/trait/KeyInput.hx"
 			],
 			[
-				"mazege",
-				"Sources/myproject/MazeGenerator.hx"
-			],
-			[
 				"mazeg",
 				"Sources/myproject/MazeGenerator.hx"
-			],
-			[
-				"stepc",
-				"Sources/myproject/StepCamera.hx"
 			],
 			[
 				"audio.hx",
@@ -1246,10 +1278,6 @@
 				"Libraries/lue/Sources/lue/sys/Assets.hx"
 			],
 			[
-				"gameda",
-				"Assets/gameData.json"
-			],
-			[
 				"sceneda",
 				"Libraries/lue/Sources/lue/sys/importer/SceneData.hx"
 			],
@@ -1280,14 +1308,6 @@
 			[
 				"camera",
 				"Libraries/lue/Sources/lue/trait/camera/Camera.hx"
-			],
-			[
-				"maze",
-				"Sources/myproject/MazeGenerator.hx"
-			],
-			[
-				"gamesc",
-				"Libraries/lue/Sources/lue/trait/GameScene.hx"
 			],
 			[
 				"scene.",
@@ -1404,10 +1424,6 @@
 			[
 				"p",
 				"project.kha"
-			],
-			[
-				"loader",
-				"Kha/Sources/kha/Loader.hx"
 			],
 			[
 				"mesh.fra",
@@ -1636,22 +1652,6 @@
 			[
 				"larifo",
 				"Sources/laried/LariFormat.hx"
-			],
-			[
-				"quat",
-				"Kha/Sources/kha/math/Quaternion.hx"
-			],
-			[
-				"index",
-				"build/html5/index.html"
-			],
-			[
-				"applicati",
-				"Kha/Kore/Sources/Kore/Application.h"
-			],
-			[
-				"basicio",
-				"Kha/Kore/Backends/OSX/Sources/Kore/BasicOpenGLView.mm"
 			]
 		],
 		"width": 0.0

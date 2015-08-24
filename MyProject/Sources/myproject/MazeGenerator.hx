@@ -8,7 +8,7 @@ import myproject.FloorsData;
 
 class MazeGenerator extends Trait {
 
-	static var currentFloor = 10;
+	static var currentFloor = 0;
 
 	public static inline var tileSize = 2;
 
