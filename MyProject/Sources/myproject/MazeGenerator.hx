@@ -110,7 +110,7 @@ class MazeGenerator extends Trait {
 
 			t.object = o;
 			initThing(t);
-			owner.addChild(o);
+			//owner.addChild(o);
 		}
 
         // UI
@@ -149,7 +149,7 @@ class MazeGenerator extends Trait {
 			o.transform.rotateZ(lue.math.Math.degToRad(md * 90));
 		}
 
-		owner.addChild(o);
+		//owner.addChild(o);
     }
 
     public function isWall(x:Int, y:Int) {

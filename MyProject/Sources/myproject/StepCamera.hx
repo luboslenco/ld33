@@ -2,6 +2,7 @@ package myproject;
 
 import kha.Key;
 import kha.input.Keyboard;
+import lue.sys.Input;
 import lue.core.Trait;
 import lue.core.IUpdateable;
 import lue.trait.camera.Camera;
@@ -42,7 +43,9 @@ class StepCamera extends Trait implements IUpdateable {
     public function new() {
         super();
 
+        #if (!sys_ios)
         Keyboard.get().notify(onKeyDown, onKeyUp);
+        #end
         Root.registerInit(init);
     }
 
@@ -61,7 +64,33 @@ class StepCamera extends Trait implements IUpdateable {
     	camera.updateMatrix();
     }
 
+    var startX:Float = 0;
+    var startY:Float = 0;
     public function update() {
+    	#if sys_ios
+    	moveForward = false;
+    	moveBackward = false;
+    	turnLeft = false;
+    	turnRight = false;
+    	if (Input.started) {
+    		startX = Input.x;
+    		startY = Input.y;
+    	}
+    	else if (Input.released) {
+    		var dx = Input.x - startX;
+    		var dy = Input.y - startY;
+
+    		if (Math.abs(dx) > Math.abs(dy)) {
+    			if (dx > 0) turnRight = true;
+    			else turnLeft = true;
+    		}
+    		else {
+    			if (dy <= 0) moveForward = true;
+    			else moveBackward = true;
+    		}
+    	}
+    	#end
+
     	var rotDif = rotCurrent - rotLast;
     	var posDif = posCurrent - posLast;
     	var strafeDif = strafeCurrent - strafeLast;

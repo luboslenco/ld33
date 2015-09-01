@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"sha",
+				"shadowMap"
+			],
+			[
+				"dep",
+				"depthShader"
+			],
+			[
+				"turn",
+				"turnLeft"
+			],
+			[
+				"star",
+				"startX"
+			],
+			[
 				"respa",
 				"respawnOffset"
 			],
@@ -26,10 +42,6 @@
 			[
 				"floo",
 				"floorLayer"
-			],
-			[
-				"star",
-				"startOp"
 			],
 			[
 				"title",
@@ -502,28 +514,24 @@
 			[
 				"tr",
 				"transform"
-			],
-			[
-				"trans",
-				"transformSelected"
-			],
-			[
-				"R",
-				"Renderer"
-			],
-			[
-				"cals",
-				"class_name"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "Sources/myproject/MazeGenerator.hx",
+			"file": "Libraries/lue/Sources/Shaders/mesh.frag.glsl",
 			"settings":
 			{
-				"buffer_size": 8624,
+				"buffer_size": 1673,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Libraries/lue/Sources/Shaders/mesh.vert.glsl",
+			"settings":
+			{
+				"buffer_size": 639,
 				"line_ending": "Unix"
 			}
 		}
@@ -635,29 +643,29 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 115.0,
-		"last_filter": "osx",
+		"height": 313.0,
+		"last_filter": "ht",
 		"selected_items":
 		[
 			[
-				"osx",
-				"Build With: Kha - OSX-Run"
-			],
-			[
 				"ht",
 				"Build With: Kha - HTML5-Run"
+			],
+			[
+				"osx",
+				"Build With: Kha - OSX-Run"
 			],
 			[
 				"h",
 				"Build With: Kha - HTML5-Run"
 			],
 			[
-				"o",
-				"Build With: Kha - OSX-Run"
-			],
-			[
 				"ios",
 				"Build With: Kha - iOS"
+			],
+			[
+				"o",
+				"Build With: Kha - OSX-Run"
 			],
 			[
 				"io",
@@ -747,16 +755,38 @@
 	],
 	"file_history":
 	[
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/build/html5/index.html",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/FloorTextRenderer.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/IntroTextRenderer.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/core/FrameRenderer.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/renderer/MeshRenderer.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/core/FrameRenderer2D.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/mesh.frag.glsl",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/depthmap.frag.glsl",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/depthmap.vert.glsl",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/mesh.vert.glsl",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/camera/PerspectiveCamera.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics4/TextureFilter.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/MazeGenerator.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/gameData.json",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/GameScene.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/Root.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/Scene.json",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait2d/effect/TransitionTrait.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/PsdData.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics4/Graphics.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics4/TextureFormat.hx",
+		"/Users/lubos/Desktop/ssao_1.glsl",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/material/Shader.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/Main.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/Loader.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/mesh.frag.glsl",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/build/html5/index.html",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/camera/Camera.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics4/CompareMode.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/renderer/Renderer.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Backends/Unity/unityEngine/Shader.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/input/Mouse.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/Mouse.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/StepCamera.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/FloorTextRenderer.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/IntroTextRenderer.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/gameData.json",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/GameScene.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/UIRenderer.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/project.lue",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Backends/Kore/khacpp/toolchain/haxe-target.xml",
@@ -764,8 +794,6 @@
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/build/osx-build/Sources/include/kha/_SuperString/SuperString_Impl_.h",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/S.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/input/Keyboard.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/input/Mouse.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/Mouse.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/dependencies/Sources/motion/Actuate.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/dependencies/Sources/motion/actuators/GenericActuator.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/KeyInput.hx",
@@ -773,22 +801,15 @@
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/audio1/Audio.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/Key.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/intro_metadata.json",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/PsdData.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait2d/ui/PsdParser.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/PsdFormat.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/project.kha",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait2d/effect/TransitionTrait.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/core/FrameRenderer2D.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics2/Graphics.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics4/Graphics.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/Assets.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/SceneData.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/Root.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/SceneFormat.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/GameFormat.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/camera/Camera.hx",
 		"/Users/lubos/Library/Application Support/Sublime Text 3/Packages/Haxe/Kha.sublime-build",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/Scene.json",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/.gitignore",
 		"/Users/lubos/Documents/Sublime/cs2/.gitignore",
 		"/Users/lubos/Documents/Sublime/lued/project.kha",
@@ -861,20 +882,7 @@
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/ImageRenderer.hx",
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/ShapeRenderer.hx",
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/TextRenderer.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/particles/Emitter.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/particles/Particle.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/effect/TransitionTrait.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/effect/SlideTrait.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/animation/Sprite.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/animation/Animation.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/Light.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/LiveScript.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/MeshLink.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/NodeExecutor.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/SceneInstance.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/Animation.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/renderer/SkydomeMeshRenderer.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/renderer/ParticlesRenderer.hx"
+		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/particles/Emitter.hx"
 	],
 	"find":
 	{
@@ -904,6 +912,31 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"readDepth",
+			"coord",
+			"readDepth",
+			"depth",
+			"LinearFilter",
+			"depthma",
+			"createno",
+			"placeNode",
+			"size",
+			"10.0",
+			"0.1",
+			"readDepth",
+			"tc",
+			"texCoord",
+			"lPosH",
+			"camerarange.y",
+			"camerarange.x",
+			"parsepro",
+			"normalizedDistance",
+			"MVP",
+			"shadowmap",
+			"shadowShader",
+			"ShadowMap",
+			"shadowMap",
+			"remove",
 			"parsep",
 			"physics",
 			"ceilNodes",
@@ -1006,32 +1039,7 @@
 			"isTyping",
 			"textSelectedId",
 			"zblend",
-			"clone",
-			"zblend",
-			"zbl",
-			"absSize",
-			"ax",
-			"resized = true; ",
-			"anchor",
-			"nested",
-			"moveca",
-			"true",
-			"normalize",
-			"moveForward",
-			"zblend",
-			"_depe",
-			"_shaders",
-			"shaders",
-			"_shaders",
-			"lari",
-			"LariExporter",
-			"Lari",
-			"lari",
-			"LariPanel",
-			"blender",
-			"laried",
-			"lued",
-			"laried"
+			"clone"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1054,32 +1062,59 @@
 			[
 				{
 					"buffer": 0,
-					"file": "Sources/myproject/MazeGenerator.hx",
+					"file": "Libraries/lue/Sources/Shaders/mesh.frag.glsl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8624,
+						"buffer_size": 1673,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								173,
-								173
+								1459,
+								1459
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Shader Syntax (GLSL HLSL Cg)/OpenGL SL.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 937.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Libraries/lue/Sources/Shaders/mesh.vert.glsl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 639,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								479,
+								479
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Shader Syntax (GLSL HLSL Cg)/OpenGL SL.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 339.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1118,7 +1153,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 80.0
+		"height": 123.0
 	},
 	"output.find_results":
 	{
@@ -1142,16 +1177,152 @@
 		"selected_items":
 		[
 			[
+				"mesh.fra",
+				"Libraries/lue/Sources/Shaders/mesh.frag.glsl"
+			],
+			[
+				"mesh.",
+				"Libraries/lue/Sources/Shaders/mesh.vert.glsl"
+			],
+			[
+				"depthma",
+				"Libraries/lue/Sources/Shaders/depthmap.frag.glsl"
+			],
+			[
+				"perspe",
+				"Libraries/lue/Sources/lue/trait/camera/PerspectiveCamera.hx"
+			],
+			[
+				"depth",
+				"Libraries/lue/Sources/Shaders/depthmap.vert.glsl"
+			],
+			[
+				"framere",
+				"Libraries/lue/Sources/lue/core/FrameRenderer2D.hx"
+			],
+			[
+				"texture",
+				"Kha/Sources/kha/graphics4/TextureFilter.hx"
+			],
+			[
+				"texturefi",
+				"Kha/Sources/kha/graphics4/TextureFilter.hx"
+			],
+			[
+				"meshre",
+				"Libraries/lue/Sources/lue/trait/renderer/MeshRenderer.hx"
+			],
+			[
+				"mesh.frag",
+				"Libraries/lue/Sources/Shaders/mesh.frag.glsl"
+			],
+			[
+				"root",
+				"Libraries/lue/Sources/lue/Root.hx"
+			],
+			[
+				"scene.",
+				"Assets/Scene.json"
+			],
+			[
 				"maze",
 				"Sources/myproject/MazeGenerator.hx"
 			],
 			[
-				"introte",
-				"Sources/myproject/IntroTextRenderer.hx"
+				"mazege",
+				"Sources/myproject/MazeGenerator.hx"
+			],
+			[
+				"transitiont",
+				"Libraries/lue/Sources/lue/trait2d/effect/TransitionTrait.hx"
+			],
+			[
+				"psdda",
+				"Libraries/lue/Sources/lue/sys/importer/PsdData.hx"
+			],
+			[
+				"grap",
+				"Kha/Sources/kha/graphics4/Graphics.hx"
+			],
+			[
+				"mazeg",
+				"Sources/myproject/MazeGenerator.hx"
+			],
+			[
+				"texturefo",
+				"Kha/Sources/kha/graphics4/TextureFormat.hx"
+			],
+			[
+				"mesh.vert",
+				"Libraries/lue/Sources/Shaders/mesh.vert.glsl"
+			],
+			[
+				"mesh.vert.glsl",
+				"Libraries/lue/Sources/Shaders/mesh.vert.glsl"
+			],
+			[
+				"shader",
+				"Libraries/lue/Sources/lue/sys/material/Shader.hx"
+			],
+			[
+				"main",
+				"Sources/Main.hx"
 			],
 			[
 				"loader",
 				"Kha/Sources/kha/Loader.hx"
+			],
+			[
+				"perspec",
+				"Libraries/lue/Sources/lue/trait/camera/PerspectiveCamera.hx"
+			],
+			[
+				"camera",
+				"Libraries/lue/Sources/lue/trait/camera/Camera.hx"
+			],
+			[
+				"comapremo",
+				"Kha/Sources/kha/graphics4/CompareMode.hx"
+			],
+			[
+				"rend",
+				"Libraries/lue/Sources/lue/trait/renderer/Renderer.hx"
+			],
+			[
+				"renderer",
+				"Libraries/lue/Sources/lue/trait/renderer/Renderer.hx"
+			],
+			[
+				"frameren",
+				"Libraries/lue/Sources/lue/core/FrameRenderer2D.hx"
+			],
+			[
+				"depthmap.vert",
+				"Libraries/lue/Sources/Shaders/depthmap.vert.glsl"
+			],
+			[
+				"framerend",
+				"Libraries/lue/Sources/lue/core/FrameRenderer.hx"
+			],
+			[
+				"mesh.ver",
+				"Libraries/lue/Sources/Shaders/mesh.vert.glsl"
+			],
+			[
+				"shader.hx",
+				"Libraries/lue/Sources/lue/sys/material/Shader.hx"
+			],
+			[
+				"mouse",
+				"Kha/Sources/kha/input/Mouse.hx"
+			],
+			[
+				"mouse.hx",
+				"Kha/Sources/kha/Mouse.hx"
+			],
+			[
+				"introte",
+				"Sources/myproject/IntroTextRenderer.hx"
 			],
 			[
 				"gameda",
@@ -1178,24 +1349,12 @@
 				"Kha/Backends/Kore/khacpp/toolchain/haxe-target.xml"
 			],
 			[
-				"mazege",
-				"Sources/myproject/MazeGenerator.hx"
-			],
-			[
 				"stepca",
 				"Sources/myproject/StepCamera.hx"
 			],
 			[
 				"s.",
 				"build/osx-build/Sources/include/kha/_SuperString/SuperString_Impl_.h"
-			],
-			[
-				"mouse",
-				"Kha/Sources/kha/input/Mouse.hx"
-			],
-			[
-				"mouse.hx",
-				"Kha/Sources/kha/Mouse.hx"
 			],
 			[
 				"keyboard",
@@ -1212,10 +1371,6 @@
 			[
 				"keyin",
 				"Libraries/lue/Sources/lue/trait/KeyInput.hx"
-			],
-			[
-				"mazeg",
-				"Sources/myproject/MazeGenerator.hx"
 			],
 			[
 				"audio.hx",
@@ -1235,10 +1390,6 @@
 			],
 			[
 				"sdda",
-				"Libraries/lue/Sources/lue/sys/importer/PsdData.hx"
-			],
-			[
-				"psdda",
 				"Libraries/lue/Sources/lue/sys/importer/PsdData.hx"
 			],
 			[
@@ -1262,14 +1413,6 @@
 				"project.kha"
 			],
 			[
-				"transitiont",
-				"Libraries/lue/Sources/lue/trait2d/effect/TransitionTrait.hx"
-			],
-			[
-				"frameren",
-				"Libraries/lue/Sources/lue/core/FrameRenderer2D.hx"
-			],
-			[
 				"graphics",
 				"Kha/Sources/kha/graphics2/Graphics.hx"
 			],
@@ -1280,14 +1423,6 @@
 			[
 				"sceneda",
 				"Libraries/lue/Sources/lue/sys/importer/SceneData.hx"
-			],
-			[
-				"main",
-				"Sources/Main.hx"
-			],
-			[
-				"root",
-				"Libraries/lue/Sources/lue/Root.hx"
 			],
 			[
 				"transition",
@@ -1304,14 +1439,6 @@
 			[
 				"gamefor",
 				"Libraries/lue/Sources/lue/sys/importer/GameFormat.hx"
-			],
-			[
-				"camera",
-				"Libraries/lue/Sources/lue/trait/camera/Camera.hx"
-			],
-			[
-				"scene.",
-				"Assets/Scene.json"
 			],
 			[
 				"scene",
@@ -1358,10 +1485,6 @@
 				"Sources/lued/DebugRenderer.hx"
 			],
 			[
-				"renderer",
-				"Libraries/lue/Sources/lue/trait/renderer/Renderer.hx"
-			],
-			[
 				"skinnedre",
 				"Libraries/lue/Sources/lue/trait/renderer/SkinnedMeshRenderer.hx"
 			],
@@ -1372,10 +1495,6 @@
 			[
 				"gamefo",
 				"Libraries/lue/Sources/lue/sys/importer/GameFormat.hx"
-			],
-			[
-				"meshre",
-				"Libraries/lue/Sources/lue/trait/renderer/MeshRenderer.hx"
 			],
 			[
 				"objectc",
@@ -1426,10 +1545,6 @@
 				"project.kha"
 			],
 			[
-				"mesh.fra",
-				"Libraries/lue/Sources/Shaders/mesh.frag.glsl"
-			],
-			[
 				"loader.hx",
 				"Kha/Sources/kha/Loader.hx"
 			],
@@ -1468,10 +1583,6 @@
 			[
 				"texturema",
 				"Libraries/lue/Sources/lue/sys/material/TextureMaterial.hx"
-			],
-			[
-				"mesh.frag",
-				"Libraries/lue/Sources/Shaders/mesh.frag.glsl"
 			],
 			[
 				"cameraco",
@@ -1546,10 +1657,6 @@
 				"Libraries/zblend/Sources/zblend/sys/material/Shader.hx"
 			],
 			[
-				"shader",
-				"Kha/Backends/Unity/unityEngine/Shader.hx"
-			],
-			[
 				"vertexda",
 				"Kha/Sources/kha/graphics4/VertexData.hx"
 			],
@@ -1578,80 +1685,8 @@
 				"Libraries/zblend/Sources/zblend/trait/CameraRotator.hx"
 			],
 			[
-				"shader.hx",
-				"Libraries/zblend/Sources/zblend/sys/material/Shader.hx"
-			],
-			[
 				"mouse.",
 				"Kha/Sources/kha/input/Mouse.hx"
-			],
-			[
-				"input.hx",
-				"Libraries/zblend/Sources/zblend/sys/Input.hx"
-			],
-			[
-				"input",
-				"Libraries/zblend/Sources/zblend/trait/Input.hx"
-			],
-			[
-				"framere",
-				"Libraries/zblend/Sources/zblend/core/FrameRenderer2D.hx"
-			],
-			[
-				"basico",
-				"Kha/Kore/Backends/OSX/Sources/Kore/BasicOpenGLView.mm"
-			],
-			[
-				"basicopen",
-				"Kha/Kore/Backends/OSX/Sources/Kore/BasicOpenGLView.mm"
-			],
-			[
-				"applica",
-				"Kha/Kore/Sources/Kore/Application.cpp"
-			],
-			[
-				"readme",
-				"Libraries/zui/README.md"
-			],
-			[
-				"debugc",
-				"Sources/laried/DebugController.hx"
-			],
-			[
-				"transformgi",
-				"Sources/laried/TransformGizmo.hx"
-			],
-			[
-				"ext",
-				"Libraries/zui/Sources/zui/Ext.hx"
-			],
-			[
-				"vec3",
-				"Libraries/zblend/Sources/zblend/math/Vec3.hx"
-			],
-			[
-				"ray",
-				"Libraries/zblend/Sources/zblend/math/Ray.hx"
-			],
-			[
-				"plane",
-				"Libraries/zblend/Sources/zblend/math/Plane.hx"
-			],
-			[
-				"objectp",
-				"Sources/laried/ObjectPicker.hx"
-			],
-			[
-				"debugco",
-				"Sources/laried/DebugController.hx"
-			],
-			[
-				"composei",
-				"Libraries/dependencies/Sources/composure/core/ComposeItem.hx"
-			],
-			[
-				"larifo",
-				"Sources/laried/LariFormat.hx"
 			]
 		],
 		"width": 0.0

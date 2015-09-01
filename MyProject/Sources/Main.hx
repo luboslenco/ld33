@@ -22,11 +22,11 @@ class Main {
         //#end
     }
     static function start() {
-        #if js
-        var canvas = cast(js.Browser.document.getElementById('khanvas'), js.html.CanvasElement);
-        canvas.width = js.Browser.window.innerWidth;
-        canvas.height = js.Browser.window.innerHeight;      
-        #end
+        //#if js
+        //var canvas = cast(js.Browser.document.getElementById('khanvas'), js.html.CanvasElement);
+        //canvas.width = js.Browser.window.innerWidth;
+        //canvas.height = js.Browser.window.innerHeight;      
+        //#end
         
         var starter = new kha.Starter();
         starter.start(new lue.Root("Lue", "room1", Game));
