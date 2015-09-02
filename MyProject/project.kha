@@ -11,6 +11,8 @@
 				"intro_atlas",
 				"floor_atlas",
 				"ui_atlas",
+				"helvetica_neue18.kravur",
+				"helvetica_neue16.kravur",
 				"die",
 				"step",
 				"lever",
@@ -27,8 +29,9 @@
 		"dependencies"
 	],
 	"game": {
-		"width": 1136,
 		"antiAliasingSamples": 2,
+		"width": 1136,
+		"fullscreen": false,
 		"name": "Empty",
 		"height": 640
 	},
@@ -62,6 +65,18 @@
 			"type": "image",
 			"file": "ui_atlas.png",
 			"name": "ui_atlas"
+		},
+		{
+			"type": "font",
+			"file": "helvetica_neue.ttf",
+			"size": 18,
+			"name": "helvetica_neue"
+		},
+		{
+			"type": "font",
+			"file": "helvetica_neue.ttf",
+			"size": 16,
+			"name": "helvetica_neue"
 		},
 		{
 			"type": "sound",

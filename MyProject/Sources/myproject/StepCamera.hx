@@ -154,7 +154,7 @@ class StepCamera extends Trait implements IUpdateable {
 		moveTo(targetX, targetY, dist, "strafe");
 	}
 
-	function delayMove(t = 0.2) {
+	function delayMove(t = 0.2) { // Prevents from moving for certain time
 		moveComplete = false;
 		motion.Actuate.timer(t).onComplete(moved);
 	}
@@ -183,25 +183,28 @@ class StepCamera extends Trait implements IUpdateable {
 					}
 					return;
 				}
-				// Gate
-				else if (t.type == MazeGenerator.THING_GATE) {
-					// Gate closed
-					if (t.state == 0) { return; }
-				}
-				// Hammer
-				else if (t.type == MazeGenerator.THING_HAMMER) {
-					// Hammer down
-					if (t.state == 0) { return; }
-				}
-				// Mover
-				else if (t.type == MazeGenerator.THING_MOVER) {
-					return;
+				// God mode can move everywhere
+				else if (!MazeGenerator.godMode) {
+					// Gate
+					if (t.type == MazeGenerator.THING_GATE) {
+						// Gate closed
+						if (t.state == 0) { return; }
+					}
+					// Hammer
+					else if (t.type == MazeGenerator.THING_HAMMER) {
+						// Hammer down
+						if (t.state == 0) { return; }
+					}
+					// Mover
+					else if (t.type == MazeGenerator.THING_MOVER) {
+						return;
+					}
 				}
 			}
 		}
 
 		// Move
-		if (!maze.isWall(targetX, targetY) && !maze.isStairsDown(targetX, targetY)) {
+		if ((!maze.isWall(targetX, targetY) || MazeGenerator.godMode) && !maze.isStairsDown(targetX, targetY)) {
 
 			lue.sys.Audio.playSound("step");
 

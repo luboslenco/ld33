@@ -520,18 +520,10 @@
 	"buffers":
 	[
 		{
-			"file": "Libraries/lue/Sources/Shaders/mesh.frag.glsl",
+			"file": "Kha/Kore/Backends/OSX/Sources/Kore/System.mm",
 			"settings":
 			{
-				"buffer_size": 1673,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Libraries/lue/Sources/Shaders/mesh.vert.glsl",
-			"settings":
-			{
-				"buffer_size": 639,
+				"buffer_size": 4216,
 				"line_ending": "Unix"
 			}
 		}
@@ -643,17 +635,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 313.0,
-		"last_filter": "ht",
+		"height": 115.0,
+		"last_filter": "osx",
 		"selected_items":
 		[
 			[
-				"ht",
-				"Build With: Kha - HTML5-Run"
+				"osx",
+				"Build With: Kha - OSX-Build"
 			],
 			[
-				"osx",
-				"Build With: Kha - OSX-Run"
+				"ht",
+				"Build With: Kha - HTML5-Run"
 			],
 			[
 				"h",
@@ -755,13 +747,20 @@
 	],
 	"file_history":
 	[
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/project.kha",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Kore/Backends/Windows/Sources/Kore/System.cpp",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/mesh.frag.glsl",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Kore/Sources/Kore/Application.cpp",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Kore/Backends/OSX/Sources/Kore/BasicOpenGLView.mm",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Kore/Backends/OSX/Sources/Kore/System.mm",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Kore/Backends/OSX/Sources/Kore/System.cpp",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Backends/Kore/main.cpp",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/mesh.vert.glsl",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/core/FrameRenderer.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/renderer/MeshRenderer.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/core/FrameRenderer2D.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/mesh.frag.glsl",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/depthmap.frag.glsl",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/depthmap.vert.glsl",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/mesh.vert.glsl",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/camera/PerspectiveCamera.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics4/TextureFilter.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/MazeGenerator.hx",
@@ -803,7 +802,6 @@
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/intro_metadata.json",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait2d/ui/PsdParser.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/PsdFormat.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/project.kha",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics2/Graphics.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/Assets.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/SceneData.hx",
@@ -876,13 +874,7 @@
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/tiles/TileMap.hx",
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/tiles/TileSheet.hx",
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/ui/Layout.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/ui/PsdParser.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/ui/TapTrait.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/util/ParallaxController.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/ImageRenderer.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/ShapeRenderer.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/TextRenderer.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/particles/Emitter.hx"
+		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/ui/PsdParser.hx"
 	],
 	"find":
 	{
@@ -912,6 +904,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Kore::Application::the()->height()",
+			"Kore::Application::the()->width()",
+			"mainScreen",
+			"didfi",
+			"fi",
+			"did",
+			"fullscreen",
 			"readDepth",
 			"coord",
 			"readDepth",
@@ -1032,14 +1031,7 @@
 			"submitTextId",
 			"textToSubmit",
 			"deselectText",
-			"CursorPixelX",
-			"cursorPixelX",
-			"deselect",
-			"redraws",
-			"isTyping",
-			"textSelectedId",
-			"zblend",
-			"clone"
+			"CursorPixelX"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1062,59 +1054,31 @@
 			[
 				{
 					"buffer": 0,
-					"file": "Libraries/lue/Sources/Shaders/mesh.frag.glsl",
+					"file": "Kha/Kore/Backends/OSX/Sources/Kore/System.mm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1673,
+						"buffer_size": 4216,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1459,
-								1459
+								1285,
+								1285
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Shader Syntax (GLSL HLSL Cg)/OpenGL SL.tmLanguage",
+							"syntax": "Packages/Objective-C/Objective-C++.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 937.0,
+						"translation.y": 874.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "Libraries/lue/Sources/Shaders/mesh.vert.glsl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 639,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								479,
-								479
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Shader Syntax (GLSL HLSL Cg)/OpenGL SL.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 339.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1176,6 +1140,26 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"proj",
+				"project.kha"
+			],
+			[
+				"system.cpp",
+				"Kha/Kore/Backends/Windows/Sources/Kore/System.cpp"
+			],
+			[
+				"system.mm",
+				"Kha/Kore/Backends/OSX/Sources/Kore/System.mm"
+			],
+			[
+				"applicati",
+				"Kha/Kore/Sources/Kore/Application.cpp"
+			],
+			[
+				"main.cpp",
+				"Kha/Backends/Kore/main.cpp"
+			],
 			[
 				"mesh.fra",
 				"Libraries/lue/Sources/Shaders/mesh.frag.glsl"
@@ -1406,10 +1390,6 @@
 			],
 			[
 				"proje",
-				"project.kha"
-			],
-			[
-				"proj",
 				"project.kha"
 			],
 			[
@@ -1671,22 +1651,6 @@
 			[
 				".lari",
 				"MyProject/project.lari"
-			],
-			[
-				".ari",
-				"build/osx-build/build/laried.build/Release/laried.build/Objects-normal/x86_64/ArrayBufferViewImpl.d"
-			],
-			[
-				"camerat",
-				"Sources/laried/CameraController.hx"
-			],
-			[
-				"camerarot",
-				"Libraries/zblend/Sources/zblend/trait/CameraRotator.hx"
-			],
-			[
-				"mouse.",
-				"Kha/Sources/kha/input/Mouse.hx"
 			]
 		],
 		"width": 0.0

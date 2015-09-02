@@ -38,12 +38,15 @@ class MazeGenerator extends Trait {
 
     public var gameOver = false;
 
+    static var editorFloor:Floor = null;
+    public static var godMode = true;
+
     public function new() {
         super();
 
         inst = this;
 
-        floor = FloorsData.getFloor(currentFloor);
+        floor = editorFloor == null ? FloorsData.getFloor(currentFloor) : editorFloor;
         maze = floor.data;
         mazeDirs = floor.dirs;
         mazeWidth =  maze[0].length;
@@ -119,20 +122,22 @@ class MazeGenerator extends Trait {
         Root.addChild(uio);
 
         // Floor text
-        var cf = lue.sys.Storage.getValue(S.CurrentFloor);
-        if (currentFloor == 0) {
-            var ft = new IntroTextRenderer();
-            var fto = new Object();
-            fto.addTrait(ft);
-            Root.addChild(fto);
+        if (editorFloor == null) {
+            var cf = lue.sys.Storage.getValue(S.CurrentFloor);
+            if (currentFloor == 0) {
+                var ft = new IntroTextRenderer();
+                var fto = new Object();
+                fto.addTrait(ft);
+                Root.addChild(fto);
+            }
+            else if ((currentFloor <= 6 || currentFloor == 11) && cf < currentFloor) {
+                var ft = new FloorTextRenderer(currentFloor);
+                var fto = new Object();
+                fto.addTrait(ft);
+                Root.addChild(fto);
+            }
+            lue.sys.Storage.setValue(S.CurrentFloor, currentFloor);
         }
-        else if ((currentFloor <= 6 || currentFloor == 11) && cf < currentFloor) {
-            var ft = new FloorTextRenderer(currentFloor);
-            var fto = new Object();
-            fto.addTrait(ft);
-            Root.addChild(fto);
-        }
-        lue.sys.Storage.setValue(S.CurrentFloor, currentFloor);
     }
 
     function placeNode(nodes:Array<TNode>, nodePos:Int, i:Int, j:Int, ceiling = false) {
@@ -181,6 +186,10 @@ class MazeGenerator extends Trait {
 
     public static function previousFloor() {
     	currentFloor--;
+    }
+
+    public static function setFloor(i:Int) {
+        currentFloor = i;
     }
 
     public function getThingById(id:Int):Thing {
@@ -300,11 +309,15 @@ class MazeGenerator extends Trait {
     }
 
     function die() {
+        if (godMode) return;
+
         lue.sys.Audio.playSound("die");
         reset();
     }
 
-    public function reset() {
+    public function reset(floor:Floor = null) {
+        editorFloor = floor;
+
         gameOver = true;
     	var trans = new lue.trait2d.effect.TransitionTrait(lue.Root.gameData.scene, 0.3);
 		var o = new Object();

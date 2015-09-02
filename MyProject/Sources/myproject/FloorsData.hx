@@ -28,6 +28,8 @@ class Floor {
 
 class FloorsData {
 
+	public static inline var numLevels = 12;
+
 	public static function getFloor(i:Int):Floor {
 		var f = new Floor();
 
@@ -513,5 +515,33 @@ class FloorsData {
 		t.rate = rate;
 		t.i = i;
 		return t;
+	}
+
+	public static function getEmptyFloor(w:Int, h:Int):Floor {
+		var f = new Floor();
+		f.data = [
+			[1, 1, 1, 1, 1],
+			[1, 0, 0, 0, 1],
+			[1, 0, 0, 0, 1],
+			[1, 0, 0, 0, 1],
+			[1, 0, 0, 0, 1],
+			[1, 0, 0, 0, 1],
+			[1, 0, 0, 0, 1],
+			[1, 1, 1, 1, 1]
+		];
+		f.dirs = [
+			[0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0]
+		];
+		f.startX = 2;
+		f.startY = 1;
+		f.startDir = 0;
+		return f;
 	}
 }

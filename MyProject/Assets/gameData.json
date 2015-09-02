@@ -16,16 +16,16 @@
 		1
 	],
 	"orient": 0,
+	"ssao": 0,
+	"shadowMapping": 0,
+	"fog": 0,
 	"gravity": [
 		0,
 		0,
 		-9.8100004196167
 	],
-	"fog": 0,
-	"shadowMapping": 0,
-	"ssao": 0,
-	"physics": 0,
 	"scenes": [
 		"Scene"
-	]
+	],
+	"physics": 0
 }

@@ -4,7 +4,7 @@ class Main {
     public static function main() {
         CompileTime.importPackage("lue.trait");
         CompileTime.importPackage("myproject");
-        /*#if js
+        #if js
         untyped __js__("
             function loadScript(url, callback) {
                 var head = document.getElementsByTagName('head')[0];
@@ -17,17 +17,11 @@ class Main {
             }
         ");
         untyped loadScript("ammo.js", start);
-        #else*/
+        #else
         start();
-        //#end
+        #end
     }
     static function start() {
-        //#if js
-        //var canvas = cast(js.Browser.document.getElementById('khanvas'), js.html.CanvasElement);
-        //canvas.width = js.Browser.window.innerWidth;
-        //canvas.height = js.Browser.window.innerHeight;      
-        //#end
-        
         var starter = new kha.Starter();
         starter.start(new lue.Root("Lue", "room1", Game));
     }
