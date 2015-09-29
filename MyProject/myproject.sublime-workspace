@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"MAze",
+				"MazeGenerator"
+			],
+			[
+				"Flo",
+				"FloorsData"
+			],
+			[
+				"edi",
+				"editH"
+			],
+			[
 				"sha",
 				"shadowMap"
 			],
@@ -502,31 +514,11 @@
 			[
 				"diffuse",
 				"diffuse_color"
-			],
-			[
-				"Oj",
-				"ObjectCreator"
-			],
-			[
-				"sub",
-				"submitTextId"
-			],
-			[
-				"tr",
-				"transform"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "Kha/Kore/Backends/OSX/Sources/Kore/System.mm",
-			"settings":
-			{
-				"buffer_size": 4216,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -641,7 +633,7 @@
 		[
 			[
 				"osx",
-				"Build With: Kha - OSX-Build"
+				"Build With: Kha - OSX-Run"
 			],
 			[
 				"ht",
@@ -748,11 +740,21 @@
 	"file_history":
 	[
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/project.kha",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/MazeGenerator.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/UIRenderer.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/FloorsData.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/FloorTextRenderer.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/IntroTextRenderer.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/StepCamera.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/Tween.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait2d/effect/TransitionTrait.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/Audio.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/zui/Sources/zui/Zui.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Kore/Backends/OSX/Sources/Kore/System.mm",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Kore/Backends/Windows/Sources/Kore/System.cpp",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/mesh.frag.glsl",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Kore/Sources/Kore/Application.cpp",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Kore/Backends/OSX/Sources/Kore/BasicOpenGLView.mm",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Kore/Backends/OSX/Sources/Kore/System.mm",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Kore/Backends/OSX/Sources/Kore/System.cpp",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Backends/Kore/main.cpp",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/mesh.vert.glsl",
@@ -763,10 +765,8 @@
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/Shaders/depthmap.vert.glsl",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/camera/PerspectiveCamera.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics4/TextureFilter.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/MazeGenerator.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/Root.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/Scene.json",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait2d/effect/TransitionTrait.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/importer/PsdData.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics4/Graphics.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/graphics4/TextureFormat.hx",
@@ -781,22 +781,16 @@
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Backends/Unity/unityEngine/Shader.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/input/Mouse.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/Mouse.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/StepCamera.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/FloorTextRenderer.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/IntroTextRenderer.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/gameData.json",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/GameScene.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/UIRenderer.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/project.lue",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Backends/Kore/khacpp/toolchain/haxe-target.xml",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/FloorsData.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/build/osx-build/Sources/include/kha/_SuperString/SuperString_Impl_.h",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/S.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/input/Keyboard.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/dependencies/Sources/motion/Actuate.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/dependencies/Sources/motion/actuators/GenericActuator.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/KeyInput.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/Audio.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/audio1/Audio.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Sources/kha/Key.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Assets/intro_metadata.json",
@@ -872,9 +866,7 @@
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/tiles/Format.hx",
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/tiles/TileLayer.hx",
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/tiles/TileMap.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/tiles/TileSheet.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/ui/Layout.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/ui/PsdParser.hx"
+		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait2d/tiles/TileSheet.hx"
 	],
 	"find":
 	{
@@ -904,6 +896,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"motion",
+			"moton",
+			"motion",
+			"delayMove",
+			"gate",
+			"isgate",
+			"isWall",
+			"editorFloor",
+			"Object",
+			"object",
+			"Object",
+			"object",
+			"ui.radio(rid, Id.pos(), ",
+			"editorFloor",
+			"gameo",
 			"Kore::Application::the()->height()",
 			"Kore::Application::the()->width()",
 			"mainScreen",
@@ -1016,22 +1023,7 @@
 			"GameParams",
 			"gameParams",
 			"loadFinished",
-			"mix",
-			"toRelative",
-			"toabs",
-			"checkSelectImage",
-			"ui.",
-			"cube_",
-			"geometry1",
-			"geometry_internal_cube",
-			"texturing",
-			"drawMaterials",
-			"textSelectedCurrentText",
-			"deselecttext(",
-			"submitTextId",
-			"textToSubmit",
-			"deselectText",
-			"CursorPixelX"
+			"mix"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1049,38 +1041,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "Kha/Kore/Backends/OSX/Sources/Kore/System.mm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4216,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1285,
-								1285
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Objective-C/Objective-C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 874.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1117,7 +1079,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 123.0
+		"height": 188.0
 	},
 	"output.find_results":
 	{
@@ -1143,6 +1105,30 @@
 			[
 				"proj",
 				"project.kha"
+			],
+			[
+				"tween",
+				"Libraries/lue/Sources/lue/sys/Tween.hx"
+			],
+			[
+				"transitiont",
+				"Libraries/lue/Sources/lue/trait2d/effect/TransitionTrait.hx"
+			],
+			[
+				"audio.hx",
+				"Libraries/lue/Sources/lue/sys/Audio.hx"
+			],
+			[
+				"transit",
+				"Libraries/lue/Sources/lue/trait2d/effect/TransitionTrait.hx"
+			],
+			[
+				"zui",
+				"Libraries/zui/Sources/zui/Zui.hx"
+			],
+			[
+				"mazege",
+				"Sources/myproject/MazeGenerator.hx"
 			],
 			[
 				"system.cpp",
@@ -1211,14 +1197,6 @@
 			[
 				"maze",
 				"Sources/myproject/MazeGenerator.hx"
-			],
-			[
-				"mazege",
-				"Sources/myproject/MazeGenerator.hx"
-			],
-			[
-				"transitiont",
-				"Libraries/lue/Sources/lue/trait2d/effect/TransitionTrait.hx"
 			],
 			[
 				"psdda",
@@ -1357,10 +1335,6 @@
 				"Libraries/lue/Sources/lue/trait/KeyInput.hx"
 			],
 			[
-				"audio.hx",
-				"Libraries/lue/Sources/lue/sys/Audio.hx"
-			],
-			[
 				"audio",
 				"Kha/Sources/kha/audio1/Audio.hx"
 			],
@@ -1423,10 +1397,6 @@
 			[
 				"scene",
 				"Libraries/lue/Sources/lue/sys/importer/SceneFormat.hx"
-			],
-			[
-				"zui",
-				"Libraries/zui/Sources/zui/Zui.hx"
 			],
 			[
 				"laoder",
@@ -1643,14 +1613,6 @@
 			[
 				"vertexeleme",
 				"Kha/Sources/kha/graphics4/VertexElement.hx"
-			],
-			[
-				"vertexstructure",
-				"Kha/Sources/kha/graphics4/VertexStructure.hx"
-			],
-			[
-				".lari",
-				"MyProject/project.lari"
 			]
 		],
 		"width": 0.0

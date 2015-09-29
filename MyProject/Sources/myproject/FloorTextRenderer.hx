@@ -1,12 +1,11 @@
 package myproject;
 
 import lue.Root;
-import lue.core.Trait;
-import lue.core.IRenderable2D;
+import lue.Trait;
 import lue.sys.importer.PsdFormat;
 import lue.sys.importer.PsdData;
 
-class FloorTextRenderer extends Trait implements IRenderable2D {
+class FloorTextRenderer extends Trait {
 
 	var data:PsdData;
 
@@ -20,12 +19,13 @@ class FloorTextRenderer extends Trait implements IRenderable2D {
 		data = new PsdData(lue.sys.Assets.getString("floor_metadata"));
         floorLayer = data.getLayer("floor" + floorPos);
 
-        motion.Actuate.tween(this, 2, {bgOp: 0}).delay(3);
+        lue.sys.Tween.to(this, 2, {bgOp: 0}, null, 3);
         kha.input.Keyboard.get().notify(onDown, null);
+
+        requestRender2D(render2D);
 	}
 
-	public function render2D(g:kha.graphics2.Graphics) {
-
+	function render2D(g:kha.graphics2.Graphics) {
 		if (bgOp > 0) {
 			g.color = kha.Color.fromFloats(0, 0, 0, bgOp);
 			g.fillRect(0, 0, Root.w, Root.h);
@@ -38,7 +38,8 @@ class FloorTextRenderer extends Trait implements IRenderable2D {
 
 	function onDown(key:kha.Key, char:String) {
 		kha.input.Keyboard.get().remove(onDown, null);
-		motion.Actuate.stop(this);
-		motion.Actuate.tween(this, 2, {bgOp: 0});
+
+		//motion.Actuate.stop(this);
+		//motion.Actuate.tween(this, 2, {bgOp: 0});
 	}
 }

@@ -1,12 +1,11 @@
 package myproject;
 
 import lue.Root;
-import lue.core.Trait;
-import lue.core.IRenderable2D;
+import lue.Trait;
 import lue.sys.importer.PsdFormat;
 import lue.sys.importer.PsdData;
 
-class IntroTextRenderer extends Trait implements IRenderable2D {
+class IntroTextRenderer extends Trait {
 
 	var data:PsdData;
 	
@@ -24,11 +23,13 @@ class IntroTextRenderer extends Trait implements IRenderable2D {
         lineLayer = data.getLayer("line");
         controlsLayer = data.getLayer("controls");
 
-        motion.Actuate.tween(this, 2, {bgOp: 0}).delay(3);
+        lue.sys.Tween.to(this, 2, {bgOp: 0}, null, 3);
         kha.input.Keyboard.get().notify(onDown, null);
+
+        requestRender2D(render2D);
 	}
 
-	public function render2D(g:kha.graphics2.Graphics) {
+	function render2D(g:kha.graphics2.Graphics) {
 
 		if (bgOp > 0) {
 			g.color = kha.Color.fromFloats(0, 0, 0, bgOp);
@@ -49,7 +50,8 @@ class IntroTextRenderer extends Trait implements IRenderable2D {
 
 	function onDown(key:kha.Key, char:String) {
 		kha.input.Keyboard.get().remove(onDown, null);
-		motion.Actuate.stop(this);
-		motion.Actuate.tween(this, 2, {bgOp: 0});
+		
+		//motion.Actuate.stop(this);
+		//motion.Actuate.tween(this, 2, {bgOp: 0});
 	}
 }

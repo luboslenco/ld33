@@ -3,18 +3,15 @@ package myproject;
 import kha.Key;
 import kha.input.Keyboard;
 import lue.sys.Input;
-import lue.core.Trait;
-import lue.core.IUpdateable;
+import lue.Trait;
 import lue.trait.camera.Camera;
 import lue.trait.Transform;
 import lue.Root;
 
-class StepCamera extends Trait implements IUpdateable {
+class StepCamera extends Trait {
 
-	@inject
 	var camera:Camera;
 
-	@inject
 	var transform:Transform;
 
 	var maze:MazeGenerator;
@@ -47,9 +44,14 @@ class StepCamera extends Trait implements IUpdateable {
         Keyboard.get().notify(onKeyDown, onKeyUp);
         #end
         Root.registerInit(init);
+
+        requestUpdate(update);
     }
 
     function init() {
+    	transform = owner.transform;
+    	camera = Root.gameScene.camera;
+
     	maze = Root.getChild("Maze").getTrait(MazeGenerator);
     	posX = maze.floor.startX;
     	posY = maze.floor.startY;
@@ -66,7 +68,7 @@ class StepCamera extends Trait implements IUpdateable {
 
     var startX:Float = 0;
     var startY:Float = 0;
-    public function update() {
+    function update() {
     	#if sys_ios
     	moveForward = false;
     	moveBackward = false;
@@ -156,7 +158,7 @@ class StepCamera extends Trait implements IUpdateable {
 
 	function delayMove(t = 0.2) { // Prevents from moving for certain time
 		moveComplete = false;
-		motion.Actuate.timer(t).onComplete(moved);
+		lue.sys.Tween.timer(t, moved);
 	}
 
 	function moved() {
@@ -226,10 +228,10 @@ class StepCamera extends Trait implements IUpdateable {
 			posY = targetY;
 
 			if (type == "move") {
-				motion.Actuate.tween(this, moveTime, {posCurrent:MazeGenerator.tileSize * dist}).onComplete(moved);
+				lue.sys.Tween.to(this, moveTime, {posCurrent:MazeGenerator.tileSize * dist}, moved);
 			}
 			else if (type == "strafe") {
-				motion.Actuate.tween(this, moveTime, {strafeCurrent:MazeGenerator.tileSize * dist}).onComplete(moved);
+				lue.sys.Tween.to(this, moveTime, {strafeCurrent:MazeGenerator.tileSize * dist}, moved);
 			}
 
 			// Level completed
@@ -238,7 +240,7 @@ class StepCamera extends Trait implements IUpdateable {
 				MazeGenerator.nextFloor();
 
 				// Camera up
-				motion.Actuate.tween(this, moveTime, {liftCurrent:MazeGenerator.tileSize * dist}).onComplete(function() {});
+				lue.sys.Tween.to(this, moveTime, {liftCurrent:MazeGenerator.tileSize * dist}, function() {});
 
 				// Reset and load next floor
 				maze.reset();
@@ -246,7 +248,7 @@ class StepCamera extends Trait implements IUpdateable {
 			/*else if (isStairsDown) {
 				MazeGenerator.previousFloor();
 				// Camera down
-				motion.Actuate.tween(this, moveTime, {liftCurrent:-MazeGenerator.tileSize * dist}).onComplete(function() {});
+				lue.sys.Tween(this, moveTime, {liftCurrent:-MazeGenerator.tileSize * dist}, function() {});
 				maze.reset();
 			}*/
 		}
@@ -262,7 +264,7 @@ class StepCamera extends Trait implements IUpdateable {
 		dir -= sign;
 		if (dir < 0) dir = 3;
 		else if (dir > 3) dir = 0;
-		motion.Actuate.tween(this, 0.2, {rotCurrent:lue.math.Math.degToRad(90 * sign)}).onComplete(function() {moveComplete = true;});
+		lue.sys.Tween.to(this, 0.2, {rotCurrent:lue.math.Math.degToRad(90 * sign)}, function() {moveComplete = true;});
 	}
 
 	function onKeyDown(key:Key, char:String) {

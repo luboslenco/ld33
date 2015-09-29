@@ -1,9 +1,7 @@
 package myproject;
 
 import lue.Root;
-import lue.core.Trait;
-import lue.core.IUpdateable;
-import lue.core.IRenderable2D;
+import lue.Trait;
 import lue.sys.importer.PsdFormat;
 import lue.sys.importer.PsdData;
 import lue.sys.Input;
@@ -11,7 +9,7 @@ import zui.Zui;
 import zui.Id;
 import zui.Ext;
 
-class UIRenderer extends Trait implements IRenderable2D implements IUpdateable {
+class UIRenderer extends Trait {
 
 	var data:PsdData;
 
@@ -46,10 +44,12 @@ class UIRenderer extends Trait implements IRenderable2D implements IUpdateable {
 
         ui = new Zui(lue.sys.Assets.getFont("helvetica_neue", 18),
                      lue.sys.Assets.getFont("helvetica_neue", 16));
+
+        requestUpdate(update);
+        requestRender2D(render2D);
 	}
 
-	public function update() {
-
+	function update() {
 		if (Input.released) {
 			if (Input.x >= menuLayer.x && Input.x <= menuLayer.x + menuLayer.w &&
 				Input.y >= menuLayer.y && Input.y <= menuLayer.y + menuLayer.h) {
@@ -57,14 +57,14 @@ class UIRenderer extends Trait implements IRenderable2D implements IUpdateable {
 				menuOn = !menuOn;
 
 				if (menuOn) {
-					motion.Actuate.tween(this, 0.2, {soundOffset: 0});
-					motion.Actuate.tween(this, 0.2, {musicOffset: 0}).delay(0.05);
-					motion.Actuate.tween(this, 0.2, {respawnOffset: 0}).delay(0.1);
+					lue.sys.Tween.to(this, 0.2, {soundOffset: 0});
+					lue.sys.Tween.to(this, 0.2, {musicOffset: 0}, null, 0.05);
+					lue.sys.Tween.to(this, 0.2, {respawnOffset: 0}, null, 0.1);
 				}
 				else {
-					motion.Actuate.tween(this, 0.5, {soundOffset: -100}).delay(0.1);
-					motion.Actuate.tween(this, 0.5, {musicOffset: -100}).delay(0.05);
-					motion.Actuate.tween(this, 0.5, {respawnOffset: -100});
+					lue.sys.Tween.to(this, 0.5, {soundOffset: -100}, null, 0.1);
+					lue.sys.Tween.to(this, 0.5, {musicOffset: -100}, null, 0.05);
+					lue.sys.Tween.to(this, 0.5, {respawnOffset: -100});
 				}
 			}
 
@@ -96,8 +96,7 @@ class UIRenderer extends Trait implements IRenderable2D implements IUpdateable {
 		}
 	}
 
-	public function render2D(g:kha.graphics2.Graphics) {
-
+	function render2D(g:kha.graphics2.Graphics) {
 		g.color = kha.Color.White;
 		g.opacity = 1;
 		data.drawLayer(g, menuLayer, menuLayer.x, menuLayer.y);

@@ -1,7 +1,7 @@
 package myproject;
 
-import lue.core.Trait;
-import lue.core.Object;
+import lue.Trait;
+import lue.Object;
 import lue.Root;
 import lue.sys.importer.SceneFormat;
 import myproject.FloorsData;
@@ -39,14 +39,21 @@ class MazeGenerator extends Trait {
     public var gameOver = false;
 
     static var editorFloor:Floor = null;
-    public static var godMode = true;
+    public static var godMode = false;
 
     public function new() {
         super();
 
         inst = this;
 
-        floor = editorFloor == null ? FloorsData.getFloor(currentFloor) : editorFloor;
+        if (editorFloor == null) {
+            floor = FloorsData.getFloor(currentFloor);
+            godMode = false;
+        }
+        else {
+            floor = editorFloor;
+            godMode = true;
+        }
         maze = floor.data;
         mazeDirs = floor.dirs;
         mazeWidth =  maze[0].length;
@@ -204,12 +211,12 @@ class MazeGenerator extends Trait {
         // Open
         if (t.state == 0) {
             t.state = 1;
-            motion.Actuate.tween(t.object.transform, 0.2, {z: -0.5});
+            lue.sys.Tween.to(t.object.transform, 0.2, {z: -0.5});
         }
         // Close
         else {
             t.state = 0;
-            motion.Actuate.tween(t.object.transform, 0.2, {z: 0});
+            lue.sys.Tween.to(t.object.transform, 0.2, {z: 0});
         }
     }
 
@@ -217,12 +224,12 @@ class MazeGenerator extends Trait {
     	// Open
     	if (t.state == 0) {
     		t.state = 1;
-    		motion.Actuate.tween(t.object.transform, 0.2, {z: 1.8});
+            lue.sys.Tween.to(t.object.transform, 0.2, {z: 1.8});
     	}
     	// Close
     	else {
     		t.state = 0;
-    		motion.Actuate.tween(t.object.transform, 0.2, {z: 0});
+            lue.sys.Tween.to(t.object.transform, 0.2, {z: 0});
     	}
     }
 
@@ -236,12 +243,12 @@ class MazeGenerator extends Trait {
 	    			// Move up
 	    			if (t.state == 0) {
 	    				t.state = 1;
-	    				motion.Actuate.tween(t.object.transform, 0.2, {z: 1.8});
+                        lue.sys.Tween.to(t.object.transform, 0.2, {z: 1.8});
 	    			}
 	    			// Move down
 	    			else {
 	    				t.state = 0;
-	    				motion.Actuate.tween(t.object.transform, 0.2, {z: 0});
+                        lue.sys.Tween.to(t.object.transform, 0.2, {z: 0});
 	    				// Check player
 	    				if (t.x == cam.posX && t.y == cam.posY) {
 	    					die();
@@ -256,8 +263,8 @@ class MazeGenerator extends Trait {
     				t.i = 0;
     				// Hit
     				var originZ = t.object.transform.z;
-    				motion.Actuate.tween(t.object.transform, 0.1, {z: 0}).onComplete(function() {
-    					motion.Actuate.tween(t.object.transform, 0.1, {z: originZ});
+                    lue.sys.Tween.to(t.object.transform, 0.1, {z: 0}, function() {
+                        lue.sys.Tween.to(t.object.transform, 0.1, {z: originZ});
     				});
     				// Check player
     				if (t.x == cam.posX && t.y == cam.posY) {
@@ -273,7 +280,7 @@ class MazeGenerator extends Trait {
     			// Move
     			if (t.state == 0) { t.x++; }
     			else if (t.state == 1) { t.x--; }
-    			motion.Actuate.tween(t.object.transform, 0.2, {x: getWorldX(t.x)});
+                lue.sys.Tween.to(t.object.transform, 0.2, {x: getWorldX(t.x)});
     			// Check player
     			if (t.x == cam.posX && t.y == cam.posY) {
     				die();
@@ -287,7 +294,7 @@ class MazeGenerator extends Trait {
     				// Move
     				if (t.x == 0) t.x = mazeWidth - 1;
     				else t.x = 0;
-    				motion.Actuate.tween(t.object.transform, 0.2, {x: getWorldX(t.x)});
+                    lue.sys.Tween.to(t.object.transform, 0.2, {x: getWorldX(t.x)});
     				// Check player
     				if (t.y == cam.posY) {
     					die();

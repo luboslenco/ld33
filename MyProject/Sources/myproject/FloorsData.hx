@@ -1,4 +1,4 @@
- package myproject;
+package myproject;
 
 class Thing {
 	public function new(_type:Int, _x:Int, _y:Int) {
@@ -13,7 +13,7 @@ class Thing {
 	public var state:Int = 0;
 	public var rate:Int = 2;
 	public var i:Int = 0;
-	public var object:lue.core.Object;
+	public var object:lue.Object;
 }
 
 class Floor {
