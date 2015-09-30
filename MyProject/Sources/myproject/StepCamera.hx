@@ -43,8 +43,8 @@ class StepCamera extends Trait {
         #if (!sys_ios)
         Keyboard.get().notify(onKeyDown, onKeyUp);
         #end
-        Root.registerInit(init);
 
+        requestInit(init);
         requestUpdate(update);
     }
 
@@ -264,7 +264,8 @@ class StepCamera extends Trait {
 		dir -= sign;
 		if (dir < 0) dir = 3;
 		else if (dir > 3) dir = 0;
-		lue.sys.Tween.to(this, 0.2, {rotCurrent:lue.math.Math.degToRad(90 * sign)}, function() {moveComplete = true;});
+		var f = lue.math.Math.degToRad(90 * sign);
+		lue.sys.Tween.to(this, 0.2, {rotCurrent:f}, function() {moveComplete = true;});
 	}
 
 	function onKeyDown(key:Key, char:String) {

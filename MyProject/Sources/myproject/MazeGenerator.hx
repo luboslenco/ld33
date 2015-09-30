@@ -60,7 +60,7 @@ class MazeGenerator extends Trait {
         mazeHeight = maze.length;
         things = floor.things;
 
-        Root.registerInit(init);
+        requestInit(init);
 
         if (firstInstance) {
             firstInstance = false;
