@@ -39,7 +39,7 @@ class FloorTextRenderer extends Trait {
 	function onDown(key:kha.Key, char:String) {
 		kha.input.Keyboard.get().remove(onDown, null);
 
-		//motion.Actuate.stop(this);
-		//motion.Actuate.tween(this, 2, {bgOp: 0});
+		lue.sys.Tween.stop(this);
+		lue.sys.Tween.to(this, 2, {bgOp: 0});
 	}
 }

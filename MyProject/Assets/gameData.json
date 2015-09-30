@@ -17,7 +17,7 @@
 	],
 	"orient": 0,
 	"ssao": 0,
-	"shadowMapping": 0,
+	"shadowMapping": 1,
 	"fog": 0,
 	"gravity": [
 		0,
