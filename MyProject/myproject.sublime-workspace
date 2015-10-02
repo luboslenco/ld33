@@ -520,10 +520,18 @@
 	"buffers":
 	[
 		{
-			"file": "Libraries/lue/Sources/lue/core/FrameRenderer.hx",
+			"file": "Libraries/lue/Sources/Shaders/mesh.frag.glsl",
 			"settings":
 			{
-				"buffer_size": 2899,
+				"buffer_size": 1673,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Libraries/lue/Sources/Shaders/mesh.vert.glsl",
+			"settings":
+			{
+				"buffer_size": 639,
 				"line_ending": "Unix"
 			}
 		}
@@ -747,13 +755,17 @@
 	],
 	"file_history":
 	[
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/Shaders/depthmap.frag.glsl",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/build/html5/depthmap.frag.essl",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/MazeGenerator.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/StepCamera.hx",
+		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/core/FrameRenderer.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/renderer/MeshRenderer.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/renderer/Renderer.hx",
 		"/Users/lubos/Desktop/ldlue/Sources/lue/trait/camera/PerspectiveCamera.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/camera/PerspectiveCamera.hx",
 		"/Users/lubos/Desktop/ldlue/Sources/lue/trait/renderer/Renderer.hx",
 		"/Users/lubos/Desktop/ldlue/Sources/lue/trait/renderer/MeshRenderer.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/core/FrameRenderer.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/Root.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/Trait.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/core/material/Shader.hx",
@@ -767,12 +779,10 @@
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait2d/effect/TransitionToClassTrait.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/Tween.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/build/osx-build/Sources/src/lue/core/FrameRenderer.cpp",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/StepCamera.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/camera/Camera.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/project.kha",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Kha/Tools/haxe/std/flash/geom/PerspectiveProjection.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/trait/GameScene.hx",
-		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/MazeGenerator.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/UIRenderer.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Sources/myproject/FloorsData.hx",
 		"/Users/lubos/Documents/Sublime/ld33/MyProject/Libraries/lue/Sources/lue/sys/Audio.hx",
@@ -872,9 +882,7 @@
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/KeyInput.hx",
 		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/trait/camera/CameraRotator.hx",
 		"/Users/lubos/Documents/Sublime/lued/Kha/Sources/kha/Key.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/math/Plane.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/math/Line3.hx",
-		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/math/RayCaster.hx"
+		"/Users/lubos/Documents/Sublime/lued/Libraries/lue/Sources/lue/math/Plane.hx"
 	],
 	"find":
 	{
@@ -904,6 +912,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"depth",
+			"nextFloor",
+			"die(",
 			"trait",
 			"trace",
 			"int(",
@@ -1028,10 +1039,7 @@
 			"selectedRenderer",
 			"renderer",
 			"selectedRenderer",
-			"visible",
-			"drawobj",
-			"update",
-			"Update"
+			"visible"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1054,31 +1062,59 @@
 			[
 				{
 					"buffer": 0,
-					"file": "Libraries/lue/Sources/lue/core/FrameRenderer.hx",
+					"file": "Libraries/lue/Sources/Shaders/mesh.frag.glsl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2899,
+						"buffer_size": 1673,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								799,
-								799
+								1569,
+								1569
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"syntax": "Packages/Shader Syntax (GLSL HLSL Cg)/OpenGL SL.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 289.0,
+						"translation.y": 895.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Libraries/lue/Sources/Shaders/mesh.vert.glsl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 639,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Shader Syntax (GLSL HLSL Cg)/OpenGL SL.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 325.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1140,6 +1176,30 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"mesh.vert",
+				"Libraries/lue/Sources/Shaders/mesh.vert.glsl"
+			],
+			[
+				"mesh.frag",
+				"Libraries/lue/Sources/Shaders/mesh.frag.glsl"
+			],
+			[
+				"depth",
+				"Sources/Shaders/depthmap.frag.glsl"
+			],
+			[
+				"depthma",
+				"build/html5/depthmap.frag.essl"
+			],
+			[
+				"stepc",
+				"Sources/myproject/StepCamera.hx"
+			],
+			[
+				"maze",
+				"Sources/myproject/MazeGenerator.hx"
+			],
 			[
 				"framere",
 				"Libraries/lue/Sources/lue/core/FrameRenderer.hx"
@@ -1257,14 +1317,6 @@
 				"Libraries/lue/Sources/Shaders/mesh.vert.glsl"
 			],
 			[
-				"depthma",
-				"Libraries/lue/Sources/Shaders/depthmap.frag.glsl"
-			],
-			[
-				"depth",
-				"Libraries/lue/Sources/Shaders/depthmap.vert.glsl"
-			],
-			[
 				"texture",
 				"Kha/Sources/kha/graphics4/TextureFilter.hx"
 			],
@@ -1273,16 +1325,8 @@
 				"Kha/Sources/kha/graphics4/TextureFilter.hx"
 			],
 			[
-				"mesh.frag",
-				"Libraries/lue/Sources/Shaders/mesh.frag.glsl"
-			],
-			[
 				"scene.",
 				"Assets/Scene.json"
-			],
-			[
-				"maze",
-				"Sources/myproject/MazeGenerator.hx"
 			],
 			[
 				"psdda",
@@ -1299,10 +1343,6 @@
 			[
 				"texturefo",
 				"Kha/Sources/kha/graphics4/TextureFormat.hx"
-			],
-			[
-				"mesh.vert",
-				"Libraries/lue/Sources/Shaders/mesh.vert.glsl"
 			],
 			[
 				"mesh.vert.glsl",
@@ -1359,10 +1399,6 @@
 			[
 				"introte",
 				"Sources/myproject/IntroTextRenderer.hx"
-			],
-			[
-				"stepc",
-				"Sources/myproject/StepCamera.hx"
 			],
 			[
 				"step",
